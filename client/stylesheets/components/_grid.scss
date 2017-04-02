@@ -1,0 +1,100 @@
+/*
+
+  GRID IN CUBA
+
+*/
+
+$gridPaddingY: 60px;
+$gridPaddingX: 60px;
+
+$gridArticleX: 300px;
+$gridArticleY: 300px;
+
+$gridPaddingInsideX: 40px;
+
+.GridContainer {
+  padding: $gridPaddingY $gridPaddingX;
+  display: flex;
+}
+
+body.back {
+
+header {
+  //background-color: $colorMainYellow;
+  height: 942px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+div.content {
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  justify-content: space-between;
+  flex-direction: column;
+
+  section {
+
+    &.head {
+      display: flex;
+    }
+  }
+}
+
+aside {
+  height: 942px;
+  width: 350px;
+  background-color: $colorBackgroundAside;
+}
+
+}
+
+// FRONT
+
+.frontGridContainer {
+  width: 960px;
+  margin: 0 auto;
+}
+
+// CLASS
+
+.gridFlexPriority {
+  flex: 1;
+}
+
+.gridListArticle {
+
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+
+  &.gridListArticleSearch {
+    display: flex;
+    justify-content: center;
+    margin: $gridPaddingInsideX 0px;
+
+    .gridArticle {
+      margin: $gridPaddingInsideX / 2;
+    }
+  }
+
+  .gridArticle {
+    display: flex;
+    flex-direction: column;
+    width: $gridArticleX;
+    height: $gridArticleY;
+    padding: 0px $gridPaddingInsideX;
+    justify-content: center;
+  }
+
+  .gridArticleBig {
+    width: $gridArticleX * 1.5;
+  }
+
+  .gridArticleNormal {
+    width: $gridArticleX;
+  }
+}

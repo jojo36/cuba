@@ -1,0 +1,30 @@
+/*
+
+  COLORS IN CUBA
+
+*/
+
+// BACKGROUNDS
+
+$colorBackgroundBody: #262731;
+$colorBackgroundAside: #1c1d26;
+
+// COLORS
+
+$colorMainYellow: #ffbd70;
+$colorMainGreen: #5d854d;
+$colorMainRed: #e14646;
+$colorMainBlue: #005aff;
+
+// TEXT COLORS
+
+$colorText: white;
+$colorTextGrey: #858e97;
+
+// CLASS
+
+.textColorGrey {color: $colorTextGrey;}
+.textColorYellow { color: $colorMainYellow; }
+.textColorGreen { color: $colorMainGreen; }
+.textColorBlue { color: $colorMainBlue; }
+.textColorRed { color: $colorMainRed; }

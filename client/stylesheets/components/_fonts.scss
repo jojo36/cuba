@@ -1,0 +1,37 @@
+/*
+
+  FONTS IN CUBA
+
+*/
+
+$fontDir: '../../public/fonts/';
+
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url($fontDir + 'BrandonGrotesque-Light.eot');
+	src: url($fontDir + 'BrandonGrotesque-Light.eot?#iefix') format('embedded-opentype'),
+		url($fontDir + 'BrandonGrotesque-Light.woff') format('woff'),
+		url($fontDir + 'BrandonGrotesque-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url($fontDir + 'BrandonGrotesque-Regular.eot');
+	src: url($fontDir + 'BrandonGrotesque-Regular.eot?#iefix') format('embedded-opentype'),
+		url($fontDir + 'BrandonGrotesque-Regular.woff') format('woff'),
+		url($fontDir + 'BrandonGrotesque-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Brandon Grotesque';
+	src: url($fontDir + 'BrandonGrotesque-Bold.eot');
+	src: url($fontDir + 'BrandonGrotesque-Bold.eot?#iefix') format('embedded-opentype'),
+		url($fontDir + 'BrandonGrotesque-Bold.woff') format('woff'),
+		url($fontDir + 'BrandonGrotesque-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}

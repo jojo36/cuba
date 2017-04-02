@@ -1,0 +1,38 @@
+<template name="frontLayout">
+  <head>
+    <title></title>
+  </head>
+  <div class="frontBody">
+    <header>
+      <div class="frontGridContainer">
+        <nav class="frontMenu">
+          <h1 class="textSizeNormal textWeightBold textCapitalize"><a class="textPlaceholding" href="{{ pathFor route='frontIndex' }}">Cuba</a></h1>
+            <ul>
+              <li class="textSizeNormal textWeightBold textCapitalize"><a class="textPlaceholding" href="#">Features</a></li>
+              <li class="textSizeNormal textWeightBold textCapitalize"><a class="textPlaceholding" href="{{ pathFor route='frontLogin' }}">Login</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      {{> yield}}
+    </main>
+    <footer>
+      <div class="frontGridContainer">
+        <nav>
+          <ul>
+            <li><a class="textAlignCenter textWeightBold textCapitalize textPlaceholding" href="#">Cuba</a></li>
+          </ul>
+          <ul>
+            <li><a href="{{ pathFor route='frontSignIn' }}" class="textPlaceholding">Sign in</a></li>
+            <li><a href="{{ pathFor route='frontLogin' }}" class="textPlaceholding">Login</a></li>
+          </ul>
+          <ul>
+            <li><a href="#" class="textPlaceholding">Mentions légales</a></li>
+            <li><a href="#" class="textPlaceholding">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </div>
+</template>

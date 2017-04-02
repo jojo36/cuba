@@ -1,0 +1,241 @@
+/*
+
+  FRONT SECTION
+
+*/
+@import 'components/_initialize.scss';
+@import 'components/_colors.scss';
+@import 'components/_grid.scss';
+@import 'components/_fonts.scss';
+@import 'components/_text.scss';
+@import 'components/_form.scss';
+@import 'components/_animations.scss';
+
+div.frontBody
+{
+
+// INITIALIZE
+
+background-color: white;
+
+* {
+  color: black;
+}
+
+// HEADER
+
+header {
+  padding: 25px 0px;
+  width: 100%;
+  height: inherit;
+
+  nav.frontMenu {
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+
+      li a {
+        margin: 0px 10px;
+      }
+    }
+  }
+
+}
+
+// SECTION_TITLE
+
+section.frontTitle {
+  overflow: hidden;
+
+  h2 {
+    margin: 45px auto;
+    max-width: 600px;
+
+    span {
+      color: $colorMainRed;
+    }
+  }
+
+  .frontBtn {
+    padding: 0px 15px;
+  }
+
+}
+
+// MOCKUP
+
+img.frontMockup {
+  position: absolute;
+  left: 50%;
+  top: 300px;
+  margin-left: -460px;
+  transition: 0.45s;
+  -webkit-animation: mockup 2000ms linear both;
+  animation: mockup 2000ms linear both;
+}
+
+// BORDER RED
+div.frontBorderRed, div.frontBorderRedLogin {
+  width: 100%;
+  height: 80px;
+  background-color: $colorMainRed;
+  position: absolute;
+  top: 550px;
+  animation-name: BorderRed;
+  animation-duration: 200ms;
+}
+
+// SECTION_ARGS
+
+section.frontArgs {
+  margin-top: 400px;
+  background-color: $colorBackgroundAside;
+  z-index: 999;
+  position: relative;
+  padding: 100px 0px;
+  color: white;
+
+  h3, h4 {
+    color: white;
+  }
+
+  p {
+    color: white;
+    max-width: 250px;
+    margin: 15px auto;
+  }
+
+  div.args {
+    display: flex;
+    padding: 65px 0px 0px 0px;
+    justify-content: space-between;
+
+    figure {
+      padding: 15px 0px;
+
+      i {
+        color: white;
+        font-size: 48px;
+      }
+
+    }
+
+  }
+
+}
+
+// FOOTER
+
+footer {
+  padding: 45px 0px;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      list-style: none;
+      text-transform: uppercase;
+
+      li {
+        font-size: $textSizeNormal;
+        padding: 5px 0px;
+      }
+
+    }
+
+  }
+
+}
+
+// lOGIN
+
+&.frontBodyLogin {
+
+  background-color: $colorBackgroundAside;
+
+  * {
+    color: white;
+  }
+
+  section.frontLogin {
+    width: 350px;
+    margin: 85px auto;
+    border: 1px solid rgba(white, 0.1);
+    padding: 45px 45px 45px 45px;
+    color: white;
+    -webkit-animation: loginForm 750ms linear both;
+    animation: loginForm 750ms linear both;
+
+    .formControl {
+      display: block;
+      padding: 5px 0px;
+    }
+
+    h2 {
+      padding: 0;
+      margin: 0px 0px 25px 0px;
+    }
+
+    label {
+
+    }
+
+    button {
+      background-color: $colorMainRed;
+      border: 1px solid rgba(white, 0.1);
+      border-radius: 0;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 3px;
+      box-shadow: 0 20px 40px rgba($colorMainRed, 0.1);
+      transition: 0.15s;
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    input[type=text], input[type=password]{
+      background: none;
+      border: 1px solid rgba(white, 0.1);
+      width: 100%;
+      padding: 15px;
+      margin: 15px 0px;
+      color: white;
+      transition: 0.45s;
+
+      &:focus {
+        background-color: $colorMainRed;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .textPlaceholding {
+    &.loaded {
+      color: white !important;
+    }
+  }
+
+  footer a {
+    color: white;
+  }
+}
+
+.frontLoginBackground {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $colorBackgroundAside;
+  z-index: -999;
+}
+
+}

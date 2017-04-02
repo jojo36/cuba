@@ -1,0 +1,111 @@
+@import 'components/_colors.scss';
+@import 'components/_grid.scss';
+@import 'components/_fonts.scss';
+@import 'components/_text.scss';
+@import 'components/_form.scss';
+
+* {
+  color: $colorText;
+}
+
+.noBackground { background: none !important; background-color: none !important;}
+
+body {
+  background-color: $colorBackgroundBody;
+}
+
+article {
+  &.gridArticle {
+    background-color: $colorBackgroundAside;
+  }
+}
+
+// HEADER
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+
+  .iconMenu {
+    margin: 0px 0px 0px 5px;
+
+    &.SidebarLogo {
+      font-size: 0;
+    }
+
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    li {
+      margin: 10px 0px !important;
+    }
+  }
+
+  #iconHeader {
+    width: 45px;
+
+    &:hover .st0 {
+      stroke: $colorMainYellow;
+    }
+  }
+
+  .st0 {
+    fill:none;
+    stroke:white;
+    stroke-width:5;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:10;
+  }
+
+}
+
+// PROJECT_PAGE
+
+.sectionProject {
+  margin: $gridPaddingInsideX / 2;
+  padding: 45px 0px 25px 25px;
+  height: 300px;
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  overflow: hidden;
+}
+
+@mixin sectionProjectBefore($content, $color) {
+  content: $content;
+  position: absolute;
+  bottom: -55px;
+  left: -15px;
+  font-size: 150px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: rgba($color, 0.03);
+}
+
+.sectionProjectGant {
+  border-bottom: 1px solid $colorMainGreen;
+  background: linear-gradient(transparent 60%,  rgba($colorMainGreen, 0.1));
+
+  &:before { @include sectionProjectBefore('Gant', $colorMainGreen); }
+}
+
+.sectionProjectQuotation {
+  border-bottom: 1px solid $colorMainYellow;
+  background: linear-gradient(transparent 60%,  rgba($colorMainYellow, 0.07));
+
+  &:before { @include sectionProjectBefore('Devis', $colorMainYellow); }
+}
+
+.sectionProjectInvoice {
+  border-bottom: 1px solid $colorMainRed;
+  background: linear-gradient(transparent 60%,  rgba($colorMainRed, 0.1));
+
+  &:before { @include sectionProjectBefore('Factures', $colorMainRed); }
+}

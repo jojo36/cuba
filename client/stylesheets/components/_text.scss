@@ -1,0 +1,53 @@
+/*
+
+  TEXT IN CUBA
+
+*/
+
+// VARIABLES
+
+$textSizeSmall: 14px;
+$textSizeNormal: 16px;
+$textSizeBig: 18px;
+$textSizeHuge: 24px;
+
+$textWeightLight: lighter;
+$textWeightNormal: normal;
+$textWeightBolder: bolder;
+
+// STYLE
+
+h1 {
+  font-weight: lighter;
+  font-size: $textSizeHuge;
+}
+
+h3 {
+  font-size: $textSizeNormal;
+  font-weight: normal;
+}
+
+p {
+  line-height: 22px;
+}
+
+// CLASS
+
+.textAlignLeft {text-align: left;}
+.textAlignCenter {text-align: center;}
+.textAlignRight {text-align: right;}
+
+.textSizeSmall {font-size: $textSizeSmall;}
+.textSizeNormal {font-size: $textSizeNormal;}
+.textSizeBig {font-size: $textSizeBig;}
+.textSizeHuge {font-size: $textSizeHuge;}
+
+.textWeightLighter {font-weight: $textWeightLight; }
+.textWeightNormal {font-weight: $textWeightNormal; }
+.textWeightBold {font-weight: $textWeightBolder; }
+
+.textCapitalize {text-transform: uppercase;}
+.textPaddingBottom {padding-bottom: 25px;}
+
+// FONT
+.textIcon { vertical-align: -6px;margin-right: 5px; }
