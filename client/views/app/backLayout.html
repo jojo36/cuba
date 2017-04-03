@@ -68,11 +68,16 @@
           </svg>
       </div>
     </header>
-    <main class="GridContainer gridFlexPriority">
+    <main class="GridContainer GridContainer">
       {{ >yield }}
     </main>
     <aside class="GridContainer">
       <article class="gridFlexPriority">
+        {{#if currentUser}}
+        <p>
+            Connecté !
+        </p>
+        {{/if}}
         <h4 class="textCapitalize textPaddingBottom textWeightLighter">Client</h4>
         <h3 class="textCapitalize textPaddingBottom textSizeHuge textWeightLighter">Digital Campus</h3>
         <p class="textSizeSmall textWeightNormal textColorGrey textPaddingBottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus repellendus explicabo molestias a necessitatibus praesentium dolor incidunt totam, quaerat odit ducimus, magnam neque sed nobis quam quia beatae, ab fugit!</p>

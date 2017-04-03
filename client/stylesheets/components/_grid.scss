@@ -14,22 +14,24 @@ $gridPaddingInsideX: 40px;
 
 .GridContainer {
   padding: $gridPaddingY $gridPaddingX;
-  display: flex;
 }
 
 body.back {
 
 header {
-  //background-color: $colorMainYellow;
-  height: 942px;
   width: 150px;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  height: 100%;
+  left: 0;
 }
 
 div.content {
   display: flex;
   flex-direction: row;
+  width: 960px;
+  margin-left: 150px;
 }
 
 main {
@@ -45,7 +47,9 @@ main {
 }
 
 aside {
-  height: 942px;
+  position: fixed;
+  right: 0;
+  height: 100%;
   width: 350px;
   background-color: $colorBackgroundAside;
 }
