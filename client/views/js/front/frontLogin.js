@@ -4,22 +4,19 @@ Template.frontLogin.events({
 
     e.preventDefault();
 
-    this.render('frontIndex');
+    var username = $('input[name="username"]').val();
+    var password = $('input[name="password"]').val();
+
+    Meteor.loginWithPassword({
+			username: username
+		}, password, function(err) {
+			if (err) {
+				alert(err.reason);
+			}else {
+        Router.go('backDashboard');
+      }
+		});
 
   }
-
-});
-
-// CLASS
-
-Template.frontLogin.onRendered(function(){
-
-  $('div.frontBody').addClass('frontBodyLogin');
-
-});
-
-Template.frontIndex.onRendered(function(){
-
-  $('div.frontBody').removeClass('frontBodyLogin');
 
 });
