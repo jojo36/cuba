@@ -3,3 +3,18 @@
   RESPONSIVE
 
 */
+
+// BACK
+
+@media all and (min-width: 1200px){
+
+  body.back {
+
+    div.content {
+      width: 1400px !important;
+      margin: 0 auto;
+    }
+
+  }
+
+}

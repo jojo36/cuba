@@ -9,3 +9,35 @@ select {
   padding: 5px 7px;
   border-radius: 100px;
 }
+
+button {
+  background-color: $colorMainRed;
+  border: 1px solid rgba(white, 0.1);
+  border-radius: 0;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 20px 40px rgba($colorMainRed, 0.1);
+  transition: 0.15s;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+input[type=text], input[type=password], input[type=mail]{
+  background: none;
+  border: 1px solid rgba(white, 0.1);
+  width: 100%;
+  padding: 15px;
+  margin: 15px 0px;
+  color: white;
+  transition: 0.45s;
+
+  &:focus {
+    background-color: $colorMainRed;
+    border-radius: 3px;
+  }
+}

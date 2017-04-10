@@ -31,7 +31,7 @@
             <polygon class="st0" points="208.6,177.6 151.5,202.8 94.4,177.2 32,205 152,258.3 272,205 "/>
 
           </svg></a></li>
-          <li class="menuIcon"><a href="#">
+          <li class="menuIcon"><a href="{{ pathFor route='backCustomers' }}">
             <svg id="iconHeader" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 300 300" style="enable-background:new 0 0 300 300;" xml:space="preserve">
                <path class="st0" d="M211.5,240.5h-120v-76.6c0-21.2,17.2-38.4,38.4-38.4h43.3c21.2,0,38.4,17.2,38.4,38.4V240.5z"/>
@@ -73,13 +73,18 @@
       {{ >yield }}
     </main>
     <aside class="GridContainer">
+      <!--
       <article class="gridFlexPriority">
         <h4 class="textCapitalize textPaddingBottom textWeightLighter">Client</h4>
         <h3 class="textCapitalize textPaddingBottom textSizeHuge textWeightLighter">Digital Campus</h3>
         <p class="textSizeSmall textWeightNormal textColorGrey textPaddingBottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus repellendus explicabo molestias a necessitatibus praesentium dolor incidunt totam, quaerat odit ducimus, magnam neque sed nobis quam quia beatae, ab fugit!</p>
         <p class="textSizeNormal textWeightLighter textPaddingBottom">pierre.jehan@digital-campus.fr</p>
         <p class="textSizeNormal textWeightLighter">06.70.18.15.41</p>
-      </article>
+      </article>-->
+      <h3 class="textCapitalize textPaddingBottom textSizeHuge textWeightLighter">Commencer</h3>
+      <p class="textSizeSmall textWeightNormal textColorGrey textPaddingBottom">Cliquez sur les boutons d'actions pour commencer</p>
+      <p class="textPaddingBottom"><a href="{{ pathFor route='backNewCustomer' }}" class="textCapitalize textSizeNormal textColorRed"><i class="im im-user-male textColorRed textIcon"></i> Nouveau client</a></p>
+      <p class=""><a class="textCapitalize textSizeNormal textColorYellow"><i class="im im-plus-circle textColorYellow textIcon"></i> Nouveau projet</a></p>
     </aside>
   </div>
 </body>
