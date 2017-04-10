@@ -1,0 +1,18 @@
+<template name="backNewProject">
+  <section class="head">
+    <h1 class="gridFlexPriority textCapitalize textWeightLighter">Nouveau Projet</h1>
+  </section>
+  <section class="gridListArticle gridListArticleSearch gridFlexPriority">
+    <form>
+      <label class="textCapitalize textSizeSmall" for="">Nom du projet</label>
+      <input type="text" name="projectName">
+      <label class="textCapitalize textSizeSmall" for="">Nom du projet</label><br>
+      <select name="projectCustomerId" class="textSizeSmall textCapitalize">
+        {{ #each customers }}
+          <option value="{{ _id }}">{{ surName }}  {{ lastName }}</option>
+        {{/each}}
+      </select><br>
+      <button type="submit" name="button" class="textCapitalize">Ajouter le projet</button>
+    </form>
+  </section>
+</template>

@@ -8,6 +8,11 @@ select {
   background: none;
   padding: 5px 7px;
   border-radius: 100px;
+  margin: 15px 0px;
+
+  option {
+    color: black !important;
+  }
 }
 
 button {

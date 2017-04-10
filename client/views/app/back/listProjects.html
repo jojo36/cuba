@@ -1,9 +1,9 @@
-<template name="backDashboard">
+<template name="backProjects">
   <section class="head">
-    <h1 class="gridFlexPriority textCapitalize textWeightLighter">Tableau de bord</h1>
+    <h1 class="gridFlexPriority textCapitalize textWeightLighter">Recherche <span class="textColorYellow textWeightBold">#Projets</span></h1>
     <form class="" action="index.html" method="post">
       <select class="textCapitalize textWeightLighter TextSizeSmall" name="">
-        <option value="">Tous les projets</option>
+        <option value="">Trier par date</option>
       </select>
     </form>
   </section>
@@ -11,7 +11,7 @@
     {{ #each projects }}
     <article class="gridArticle">
       <h2 class="textCapitalize textPaddingBottom textWeightLighter">{{ name }}</h2>
-      <p class="textCapitalize textColorGrey textAlignLeft">Créé le {{ formatDate createdAt }}</p>
+      <p class="textCapitalize textColorGrey textAlignLeft">créé le {{ formatDate createdAt }}</p>
     </article>
     {{ /each }}
   </section>

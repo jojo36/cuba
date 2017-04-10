@@ -28,8 +28,6 @@ header {
 }
 
 div.content {
-  display: flex;
-  flex-direction: row;
   width: 960px;
   margin-left: 150px;
 }
@@ -42,6 +40,8 @@ main {
 
     &.head {
       display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }
@@ -49,6 +49,7 @@ main {
 aside {
   position: fixed;
   right: 0;
+  top: 0;
   height: 100%;
   width: 350px;
   background-color: $colorBackgroundAside;
@@ -72,7 +73,6 @@ aside {
 .gridListArticle {
 
   display: flex;
-  justify-content: space-between;
   flex-flow: row wrap;
 
   &.gridListArticleSearch {
