@@ -5,7 +5,7 @@ Template.backNewProject.events({
     e.preventDefault();
 
     var projectName = $('input[name="projectName"]').val();
-    var projectCustomerId = $('input[name="projectCustomerId"]').val();
+    var projectCustomerId = $('select[name="projectCustomerId"]').val();
 
     Projects.insert({
       name: projectName,

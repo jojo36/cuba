@@ -9,10 +9,11 @@
   </section>
   <section class="gridListArticle gridListArticleSearch gridFlexPriority">
     {{ #each projects }}
+    <a href="{{ pathFor route='backProject' }}">
     <article class="gridArticle">
       <h2 class="textCapitalize textPaddingBottom textWeightLighter">{{ name }}</h2>
       <p class="textCapitalize textColorGrey textAlignLeft">créé le {{ formatDate createdAt }}</p>
-    </article>
+    </article></a>
     {{ /each }}
   </section>
 </template>

@@ -1,6 +1,9 @@
 <template name="backProject">
   <section class="head">
-    <h1 class="gridFlexPriority textCapitalize textWeightLighter">Projet développement 2017</h1>
+    <h1 class="gridFlexPriority textCapitalize textWeightLighter">{{ project.name }}</h1>
+    {{ #each project.customer }}
+      <p>{{ customer._id this }}</p>
+    {{ /each }}
   </section>
   <section class="gridListArticle" style="margin: auto;">
     <a href="#">

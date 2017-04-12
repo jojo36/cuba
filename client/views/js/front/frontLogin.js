@@ -12,9 +12,7 @@ Template.frontLogin.events({
 		}, password, function(err) {
 			if (err) {
 				alert(err.reason);
-			}else {
-        Router.go('backDashboard');
-      }
+			}
 		});
 
   }
