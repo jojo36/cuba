@@ -1,9 +1,8 @@
 <template name="backProject">
   <section class="head">
     <h1 class="gridFlexPriority textCapitalize textWeightLighter">{{ project.name }}</h1>
-    {{ #each project.customer }}
-      <p>{{ customer._id this }}</p>
-    {{ /each }}
+    {{ customer.lastName }}
+      <p></p>
   </section>
   <section class="gridListArticle" style="margin: auto;">
     <a href="#">

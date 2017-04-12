@@ -1,9 +1,12 @@
 Template.backProject.helpers({
 
   project: function(){
-    return Projects.findOne();
+    var project = Projects.findOne();
+    return project;
   },
-  customer: function(customerId){
+  customer: function(){
+    var project = Projects.findOne();
+    var customerId = project.customerId;
     return Customers.findOne(customerId);
   }
 

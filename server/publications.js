@@ -33,8 +33,8 @@ Meteor.publish('getProjectCustomer', function(projectId){
 
   var project = Projects.findOne({ _id: projectId });
 
-  return Customers.findOne({
-    _id: { $in: project.customerId }
+  return Customers.find({
+    _id: project.customerId
   });
 
 });
