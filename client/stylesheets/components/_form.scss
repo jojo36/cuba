@@ -30,9 +30,18 @@ button {
   &:active {
     transform: scale(0.95);
   }
+  &.action {
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 999;
+  }
 }
 
-input[type=text], input[type=password], input[type=mail]{
+input[type=text], input[type=password], input[type=mail], textarea {
   background: none;
   border: 1px solid rgba(white, 0.1);
   width: 100%;

@@ -1,19 +1,24 @@
 <template name="backProjects">
-  <section class="head">
-    <h1 class="gridFlexPriority textCapitalize textWeightLighter">Recherche <span class="textColorYellow textWeightBold">#Projets</span></h1>
-    <form class="" action="index.html" method="post">
-      <select class="textCapitalize textWeightLighter TextSizeSmall" name="">
-        <option value="">Trier par date</option>
-      </select>
-    </form>
-  </section>
-  <section class="gridListArticle gridListArticleSearch gridFlexPriority">
-    {{ #each projects }}
-    <a href="{{ pathFor route='backProject' }}">
-    <article class="gridArticle">
-      <h2 class="textCapitalize textPaddingBottom textWeightLighter">{{ name }}</h2>
-      <p class="textCapitalize textColorGrey textAlignLeft">créé le {{ formatDate createdAt }}</p>
-    </article></a>
-    {{ /each }}
-  </section>
+  <main class="GridContainer">
+    <section class="head">
+      <h1 class="gridFlexPriority textCapitalize textWeightLighter">Recherche <span class="textColorYellow textWeightBold">#Projets</span></h1>
+      <form class="" action="index.html" method="post">
+        <select class="textCapitalize textWeightLighter TextSizeSmall" name="">
+          <option value="">Trier par date</option>
+        </select>
+      </form>
+    </section>
+    <section class="gridListArticle gridListArticleSearch gridFlexPriority">
+      {{ #each projects }}
+      <article class="gridArticle">
+        <a href="{{ pathFor route='backProject' }}">
+          <h2 class="textCapitalize textPaddingBottom textWeightLighter">{{ name }}</h2>
+          <p class="textCapitalize textColorGrey textAlignLeft">créé le {{ formatDate createdAt }}</p>
+        </a>
+        <button name="delete" class="action"><i class="im im-x-mark-circle-o textColorRed"></i></button>
+      </article>
+      {{ /each }}
+    </section>
+  </main>
+  {{> backAside  }}
 </template>

@@ -4,9 +4,7 @@ import PublishRelations from 'meteor/cottz:publish-relations';
 
 Meteor.publish('getListCustomers', function(userId){
 
-  return Customers.find({ userId: userId }, {
-    fields: {lastName: 1, surName: 1}
-  });
+  return Customers.find({ userId: userId });
 
 });
 

@@ -25,6 +25,44 @@
   }
 }
 
+.gridArticle {
+
+  &:after {
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    height: 0;
+    transition: 0.25s;
+  }
+
+  &.delete {
+
+    &:after {
+      background-color: $colorMainRed;
+      height: 100%;
+    }
+
+    i {
+      color: $colorBackgroundAside !important;
+    }
+
+    &:before {
+      content: 'Supprimer';
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      color: $colorBackgroundAside;
+      font-size: $textSizeSmall;
+      z-index: 999;
+      text-transform: uppercase;
+      font-weight: $textWeightBolder;
+    }
+  }
+}
+
 
 ////////////////////////////////////////////////////
 //                ANIMATIONS                     //

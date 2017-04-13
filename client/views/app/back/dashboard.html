@@ -1,20 +1,23 @@
 <template name="backDashboard">
-  <section class="head">
-    <h1 class="gridFlexPriority textCapitalize textWeightLighter">Tableau de bord</h1>
-    <form class="" action="index.html" method="post">
-      <select class="textCapitalize textWeightLighter TextSizeSmall" name="">
-        <option value="">Tous les projets</option>
-      </select>
-    </form>
-  </section>
-  <section class="gridListArticle gridListArticleSearch gridFlexPriority">
-    {{ #each projects }}
-    <a href="{{ pathFor route='backProject' }}">
-    <article class="gridArticle">
-      <h2 class="textCapitalize textPaddingBottom textWeightLighter">{{ name }}</h2>
-      <p class="textCapitalize textColorGrey textAlignLeft">Créé le {{ formatDate createdAt }}</p>
-    </article>
-    </a>
-    {{ /each }}
-  </section>
+  <main class="GridContainer">
+    <section class="head">
+      <h1 class="gridFlexPriority textCapitalize textWeightLighter">Tableau de bord</h1>
+      <form class="" action="index.html" method="post">
+        <select class="textCapitalize textWeightLighter TextSizeSmall" name="">
+          <option value="">Tous les projets</option>
+        </select>
+      </form>
+    </section>
+    <section class="gridListArticle gridListArticleSearch gridFlexPriority">
+      {{ #each projects }}
+      <a href="{{ pathFor route='backProject' }}">
+      <article class="gridArticle">
+        <h2 class="textCapitalize textPaddingBottom textWeightLighter">{{ name }}</h2>
+        <p class="textCapitalize textColorGrey textAlignLeft">Créé le {{ formatDate createdAt }}</p>
+      </article>
+      </a>
+      {{ /each }}
+    </section>
+  </main>
+  {{> backAside  }}
 </template>

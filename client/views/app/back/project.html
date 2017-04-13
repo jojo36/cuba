@@ -1,24 +1,26 @@
 <template name="backProject">
-  <section class="head">
-    <h1 class="gridFlexPriority textCapitalize textWeightLighter">{{ project.name }}</h1>
-    {{ customer.lastName }}
-      <p></p>
-  </section>
-  <section class="gridListArticle" style="margin: auto;">
-    <a href="#">
-      <article class="gridArticleBig sectionProject sectionProjectGant">
-        <h2 class="textWeightLighter textCapitalize textColorGreen textSizeHuge">Gant</h2>
-      </article>
-    </a>
-    <a href="#">
-      <article class="gridArticleNormal sectionProject sectionProjectQuotation">
-        <h2 class="textWeightLighter textCapitalize textColorYellow textSizeHuge">Devis</h2>
-      </article>
-    </a>
-    <a href="#">
-      <article class="gridArticleNormal sectionProject sectionProjectInvoice">
-        <h2 class="textWeightLighter textCapitalize textColorRed textSizeHuge">Factures</h2>
-      </article>
-    </a>
-  </section>
+  <main class="GridContainer">
+    <section class="head">
+      <h1 class="gridFlexPriority textCapitalize textWeightLighter">{{ project.name }}</h1>
+        <p></p>
+    </section>
+    <section class="gridListArticle" style="margin: auto;">
+      <a href="#">
+        <article class="gridArticleBig sectionProject sectionProjectGant">
+          <h2 class="textWeightLighter textCapitalize textColorGreen textSizeHuge">Gant</h2>
+        </article>
+      </a>
+      <a href="#">
+        <article class="gridArticleNormal sectionProject sectionProjectQuotation">
+          <h2 class="textWeightLighter textCapitalize textColorYellow textSizeHuge">Devis</h2>
+        </article>
+      </a>
+      <a href="#">
+        <article class="gridArticleNormal sectionProject sectionProjectInvoice">
+          <h2 class="textWeightLighter textCapitalize textColorRed textSizeHuge">Factures</h2>
+        </article>
+      </a>
+    </section>
+  </main>
+  {{> backAsideProject customerName=customer.name customerSummary=customer.infos.summary customerEmail=customer.email customerPhone=customer.phone  }}
 </template>

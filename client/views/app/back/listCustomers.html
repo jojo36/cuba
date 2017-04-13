@@ -1,15 +1,18 @@
 <template name="backCustomers">
-  <section class="head">
-    <h1 class="gridFlexPriority textCapitalize textWeightLighter">Recherche <span class="textColorRed textWeightBold">#Clients</span></h1>
-    <form class="" action="index.html" method="post">
-    </form>
-  </section>
-  <section class="gridListArticle gridListArticleSearch gridFlexPriority">
-    {{ #each customers }}
-    <article class="gridArticle">
-      <h2 class="textCapitalize textPaddingBottom textWeightLighter">{{ lastName }} {{ surName }}</h2>
-      <p class="textCapitalize textColorGrey textAlignLeft">Mis à jour à 23h35</p>
-    </article>
-    {{/each}}
-  </section>
+  <main class="GridContainer">
+    <section class="head">
+      <h1 class="gridFlexPriority textCapitalize textWeightLighter">Recherche <span class="textColorRed textWeightBold">#Clients</span></h1>
+      <form class="" action="index.html" method="post">
+      </form>
+    </section>
+    <section class="gridListArticle gridListArticleSearch gridFlexPriority">
+      {{ #each customers }}
+      <article class="gridArticle">
+        <h2 class="textCapitalize textPaddingBottom textWeightLighter">{{ name }}</h2>
+        <p class="textCapitalize textColorGrey textAlignLeft">Mis à jour à 23h35</p>
+      </article>
+      {{/each}}
+    </section>
+  </main>
+  {{> backAside  }}
 </template>

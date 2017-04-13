@@ -9,10 +9,11 @@ Template.backNewCustomer.events({
 
     e.preventDefault();
 
+    var name = $('input[name="name"]').val();
     var lastName = $('input[name="lastName"]').val();
     var surName = $('input[name="surName"]').val();
     var email = $('input[name="email"]').val();
-    var summary = $('input[name="summary"]').val();
+    var summary = $('textarea[name="summary"]').val();
     var phone = $('input[name="phone"]').val();
     var street = $('input[name="address"]').val();
     var zipCode = $('input[name="zipCode"]').val();
@@ -20,11 +21,14 @@ Template.backNewCustomer.events({
     var country = $('input[name="country"]').val();
 
     Customers.insert({
-      lastName: lastName,
-      surName: surName,
+      name: name,
       email: email,
-      summary: summary,
       phone: phone,
+      infos: {
+        lastName: lastName,
+        surName: surName,
+        summary: summary
+      },
       address: {
         street: street,
         zipCode: zipCode,

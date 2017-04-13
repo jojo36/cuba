@@ -1,0 +1,20 @@
+<template name="backAside">
+  <aside class="GridContainer">
+    <h3 class="textCapitalize textPaddingBottom textSizeHuge textWeightLighter">Commencer</h3>
+    <p class="textSizeSmall textWeightNormal textColorGrey textPaddingBottom">Cliquez sur les boutons d'actions pour commencer</p>
+    <p class="textPaddingBottom"><a href="{{ pathFor route='backNewCustomer' }}" class="textCapitalize textSizeNormal textColorRed"><i class="im im-user-male textColorRed textIcon"></i> Nouveau client</a></p>
+    <p class=""><a href="{{ pathFor route='backNewProject' }}" class="textCapitalize textSizeNormal textColorYellow"><i class="im im-plus-circle textColorYellow textIcon"></i> Nouveau projet</a></p>
+  </aside>
+</template>
+
+<template name="backAsideProject">
+  <aside class="GridContainer">
+    <article class="gridFlexPriority">
+      <h4 class="textCapitalize textPaddingBottom textWeightLighter">Client</h4>
+      <h3 class="textCapitalize textPaddingBottom textSizeHuge textWeightLighter">{{ this.customerName }}</h3>
+      <p class="textSizeSmall textWeightNormal textColorGrey textPaddingBottom">{{ this.customerSummary }}</p>
+      <p class="textSizeNormal textWeightLighter textPaddingBottom"><a href="mailto:{{ this.customerEmail }}">{{ this.customerEmail }}</a></p>
+      <p class="textSizeNormal textWeightLighter">{{ this.customerPhone }}</p>
+    </article>
+  </aside>
+</template>

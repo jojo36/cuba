@@ -1,28 +1,33 @@
 <template name="backNewCustomer">
-  <section class="head">
-    <h1 class="gridFlexPriority textCapitalize textWeightLighter">Nouveau Client</h1>
-  </section>
-  <section class="gridListArticle gridListArticleSearch gridFlexPriority">
-    <form>
-      <label class="textCapitalize textSizeSmall" for="">Nom du client</label>
-      <input type="text" name="lastName" value="">
-      <label class="textCapitalize textSizeSmall" for="">Prénom du client</label>
-      <input type="text" name="surName" value="">
-      <label class="textCapitalize textSizeSmall" for="">Email du client</label>
-      <input type="mail" name="email" value="">
-      <label class="textCapitalize textSizeSmall" for="">Summary</label>
-      <input type="text" name="summary" value="">
-      <label class="textCapitalize textSizeSmall" for="">Téléphone</label>
-      <input type="text" name="phone" value="">
-      <label class="textCapitalize textSizeSmall" for="">Adresse</label>
-      <input type="text" name="address" value="">
-      <label class="textCapitalize textSizeSmall" for="">Code Postal</label>
-      <input type="text" name="zipCode" value="">
-      <label class="textCapitalize textSizeSmall" for="">Ville</label>
-      <input type="text" name="city" value="">
-      <label class="textCapitalize textSizeSmall" for="">Pays</label>
-      <input type="text" name="country" value="">
-      <button type="submit" name="button" class="textCapitalize">Ajouter le client</button>
-    </form>
-  </section>
+  <main class="GridContainer">
+    <section class="head">
+      <h1 class="gridFlexPriority textCapitalize textWeightLighter">Nouveau Client</h1>
+    </section>
+    <section class="gridListArticle gridListArticleSearch gridFlexPriority">
+      <form>
+        <label class="textCapitalize textSizeSmall" for="">Titre du client</label>
+        <input type="text" name="name" value="">
+        <label class="textCapitalize textSizeSmall" for="">Nom du client</label>
+        <input type="text" name="lastName" value="">
+        <label class="textCapitalize textSizeSmall" for="">Prénom du client</label>
+        <input type="text" name="surName" value="">
+        <label class="textCapitalize textSizeSmall" for="">Description</label>
+        <textarea name="summary"></textarea>
+        <label class="textCapitalize textSizeSmall" for="">Email du client</label>
+        <input type="mail" name="email" value="">
+        <label class="textCapitalize textSizeSmall" for="">Téléphone</label>
+        <input type="text" name="phone" value="">
+        <label class="textCapitalize textSizeSmall" for="">Adresse</label>
+        <input type="text" name="address" value="">
+        <label class="textCapitalize textSizeSmall" for="">Code Postal</label>
+        <input type="text" name="zipCode" value="">
+        <label class="textCapitalize textSizeSmall" for="">Ville</label>
+        <input type="text" name="city" value="">
+        <label class="textCapitalize textSizeSmall" for="">Pays</label>
+        <input type="text" name="country" value="">
+        <button type="submit" name="button" class="textCapitalize">Ajouter le client</button>
+      </form>
+    </section>
+  </main>
+  {{> backAside }}
 </template>
