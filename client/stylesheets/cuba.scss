@@ -1,9 +1,13 @@
+@import 'components/_initialize.scss';
 @import 'components/_colors.scss';
 @import 'components/_grid.scss';
 @import 'components/_fonts.scss';
 @import 'components/_text.scss';
 @import 'components/_form.scss';
 @import 'components/_responsive.scss';
+@import 'components/_animations.scss';
+
+@import '_front.scss';
 
 * {
   color: $colorText;

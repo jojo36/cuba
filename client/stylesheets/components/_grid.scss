@@ -12,6 +12,10 @@ $gridArticleY: 300px;
 
 $gridPaddingInsideX: 40px;
 
+$headerWidth: 150px;
+$asideWidth: 350px;
+$additionWidth: $headerWidth + $asideWidth;
+
 .GridContainer {
   padding: $gridPaddingY $gridPaddingX;
 }
@@ -19,7 +23,7 @@ $gridPaddingInsideX: 40px;
 body.back {
 
 header {
-  width: 150px;
+  width: $headerWidth;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -28,8 +32,8 @@ header {
 }
 
 div.content {
-  width: 960px;
-  margin-left: 150px;
+  width: calc(100% - #{$additionWidth});
+  margin-left: $headerWidth;
 }
 
 main {
@@ -51,7 +55,7 @@ aside {
   right: 0;
   top: 0;
   height: 100%;
-  width: 350px;
+  width: $asideWidth;
   background-color: $colorBackgroundAside;
 }
 
