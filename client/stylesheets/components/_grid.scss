@@ -4,17 +4,18 @@
 
 */
 
-$gridPaddingY: 60px;
-$gridPaddingX: 60px;
-
-$gridArticleX: 300px;
-$gridArticleY: 300px;
-
-$gridPaddingInsideX: 40px;
 
 $headerWidth: 150px;
 $asideWidth: 350px;
 $additionWidth: $headerWidth + $asideWidth;
+
+$gridPaddingY: 60px;
+$gridPaddingX: 60px;
+
+$gridArticleX: calc(((100vw - #{$additionWidth+60px}) * 0.9 / 3) - #{$gridPaddingY});
+$gridArticleY: $gridArticleX;
+
+$gridPaddingInsideX: 40px;
 
 .GridContainer {
   padding: $gridPaddingY $gridPaddingX;
@@ -32,7 +33,7 @@ header {
 }
 
 div.content {
-  width: calc(100% - #{$additionWidth});
+  width: calc(100vw - #{$additionWidth});
   margin-left: $headerWidth;
 }
 
@@ -81,11 +82,13 @@ aside {
 
   &.gridListArticleSearch {
     display: flex;
-    justify-content: center;
-    margin: $gridPaddingInsideX 0px;
+    justify-content: space-between;
+    margin: $gridPaddingInsideX auto;
+    width: 90%;
 
-    .gridArticle {
-      margin: $gridPaddingInsideX / 2;
+    &:after {
+      content: "";
+      width: $gridArticleX;
     }
   }
 
@@ -97,13 +100,6 @@ aside {
     padding: 0px $gridPaddingInsideX;
     justify-content: center;
     position: relative;
-  }
-
-  .gridArticleBig {
-    width: $gridArticleX * 1.5;
-  }
-
-  .gridArticleNormal {
-    width: $gridArticleX;
+    margin-bottom: 63px;
   }
 }
