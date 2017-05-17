@@ -7,11 +7,7 @@ Template.backNewProject.events({
     var projectName = $('input[name="projectName"]').val();
     var projectCustomerId = $('select[name="projectCustomerId"]').val();
 
-    if(!projectName){
-
-      CUBA.toast('qzdqzfqzfqzf', 'error');
-
-    }else {
+    if(projectName){
 
       Projects.insert({
         name: projectName,
@@ -19,6 +15,12 @@ Template.backNewProject.events({
         userId: Meteor.userId(),
         createdAt: new Date()
       });
+
+      CUBA.notification.launch('Projet ajouté avec succès', 'success');
+
+    }else {
+
+      CUBA.notification.launch('Il faut remplir tous les champs', 'error');
 
     }
 

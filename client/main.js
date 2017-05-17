@@ -1,38 +1,23 @@
 CUBA = {};
 
-CUBA.toast = function(message, status){
+CUBA.notification = {
 
-  var status = this.status;
-  var message = this.message;
-  var notifHTML = $('.notif');
-  var notifHTMLMessage = $('.notif p');
-  var notifHTMLClose = $('.notif i');
+  launch: function(message, status){
 
-  function launch(status, message){
-    notifHTML.addClass(this.status);
+    notifHTML = $('.notification');
+    notifHTMLMessage = $('.notification p');
+    notifHTMLClose = $('.notification .notifClose');
+
+    notifHTML.addClass(status);
     notifHTML.addClass('notifAnimate');
-    notifHTMLMessage.text(this.message);
+    notifHTMLMessage.text(message);
+
+    setTimeout(function(){
+      notifHTML.removeClass(status);
+      notifHTML.removeClass('notifAnimate');
+      notifHTMLMessage.text('');
+    }, 4000);
+
   }
 
-  function removingClass(status){
-    notifHTML.removeClass('notifAnimate');
-    notifHTML.removeClass(this.status);
-  }
-
-  function clean(){
-    notifHTML.removingClass();
-    notifHTMLMessage.text();
-  }
-
-  launch();
-
-  setTimeout(function(){
-    clean();
-  }, 5000);
-
-  notifHTMLClose.click(function(){
-    clean();
-    $(this).fadeOut();
-  });
-
-}
+};

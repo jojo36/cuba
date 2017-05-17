@@ -17,6 +17,8 @@ Template.backProjects.events({
 
     Projects.remove(this._id);
 
+    CUBA.notification.launch('Projet supprimé avec succès', 'success');
+
   }
 
 });
