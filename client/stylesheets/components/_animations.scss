@@ -4,6 +4,62 @@
 
 */
 
+// NOTIFICATIONS
+
+.notif {
+  position: fixed;
+  top: 0;
+  right: 45px;
+  width: 350px;
+  padding: 20px;
+  opacity: 0;
+  z-index: 999;
+
+  .notifContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      margin-right: 5px;
+    }
+
+    i.notifClose {
+      cursor: pointer;
+      font-size: 20px;
+      padding: 0px 15px 0px 0px ;
+    }
+  }
+
+  &.notifAnimate {
+    animation-name: animScale;
+    animation-duration: 4s;
+  }
+
+  &.error {
+    background-color: $colorMainRed;
+  }
+}
+
+@keyframes animScale {
+	0% {
+    opacity: 0;
+    transform: translate3d(0px, -45px, 0px);
+  }
+	10% {
+    opacity: 1;
+    transform: translate3d(0px, 45px, 0px);
+  }
+  90% {
+    opacity: 1;
+    transform: translate3d(0px, 45px, 0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0px, -45px, 0px);
+  }
+}
+
 // PLACEHOLDING
 
 .textPlaceholding {

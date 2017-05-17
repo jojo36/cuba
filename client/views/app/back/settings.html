@@ -1,9 +1,15 @@
 <template name="backSettings">
+  <main class="GridContainer">
   <section class="head">
     <h1 class="textCapitalize textWeightLighter">Mon profil <span class="textColorRed textWeightBold">{{ currentUser.username }}</span></h1>
     <button type="button" class="textSizeSmall textCapitalize logout" name="button">Déconnexion</button>
   </section>
   <section class="gridListArticle gridListArticleSearch gridFlexPriority">
-    <!-- PUT CONTENT HERE -->
+    <form>
+      <label class="textCapitalize textSizeSmall" for="">Nom d'utilisateur</label>
+      <input type="text" name="name" value="">
+      <button type="submit" name="button" class="textCapitalize">Modifier mon compte</button>
+    </form>
   </section>
+</main>
 </template>

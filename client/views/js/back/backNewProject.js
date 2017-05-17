@@ -7,12 +7,22 @@ Template.backNewProject.events({
     var projectName = $('input[name="projectName"]').val();
     var projectCustomerId = $('select[name="projectCustomerId"]').val();
 
-    Projects.insert({
-      name: projectName,
-      customerId: projectCustomerId,
-      userId: Meteor.userId(),
-      createdAt: new Date()
-    });
+    if(!projectName){
+
+      CUBA.toast('qzdqzfqzfqzf', 'error');
+
+    }else {
+
+      Projects.insert({
+        name: projectName,
+        customerId: projectCustomerId,
+        userId: Meteor.userId(),
+        createdAt: new Date()
+      });
+
+    }
+
+
 
   }
 
