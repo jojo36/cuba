@@ -29,3 +29,11 @@ Template.backNewProject.events({
   }
 
 });
+
+Template.backNewProject.onRendered(function(){
+
+  $('input[type="text"]').click(function(){
+    $(this).addClass('active');
+  });
+
+});

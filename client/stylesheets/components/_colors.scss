@@ -20,6 +20,7 @@ $colorMainBlue: #005aff;
 
 $colorText: white;
 $colorTextGrey: #858e97;
+$colorTextFade: #47495a;
 
 // CLASS
 
@@ -28,3 +29,4 @@ $colorTextGrey: #858e97;
 .textColorGreen { color: $colorMainGreen; }
 .textColorBlue { color: $colorMainBlue; }
 .textColorRed { color: $colorMainRed; }
+.textColorFade { color: $colorTextFade; }

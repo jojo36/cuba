@@ -21,8 +21,6 @@ button {
   border-radius: 0;
   padding: 15px;
   cursor: pointer;
-  border-radius: 3px;
-  box-shadow: 0 20px 40px rgba($colorMainRed, 0.1);
   transition: 0.15s;
   &:hover {
     transform: scale(1.05);
@@ -53,5 +51,102 @@ input[type=text], input[type=password], input[type=mail], textarea {
   &:focus {
     background-color: $colorMainRed;
     border-radius: 3px;
+  }
+}
+
+.asideBtn {
+  @extend button;
+  margin-bottom: 25px;
+
+  &.red {
+    background-color: $colorMainRed;
+  }
+
+  &.yellow {
+    background-color: $colorMainYellow;
+    color: black !important;
+  }
+}
+
+// FORM CONTAINER
+
+.formContainer {
+  padding: 45px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .closeIcon {
+    i {
+      position: absolute;
+      top: 150px;
+      right: 150px;
+      font-size: 48px;
+      cursor: pointer;
+      transition: 0.15s;
+      color: $colorMainYellow;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .textStyle {
+    text-transform: uppercase;
+    color: $colorTextFade;
+    font-weight: $textWeightBolder;
+    font-size: 40px;
+  }
+
+  form {
+
+    padding: 45px;
+
+    .form-group {
+      position: relative;
+    }
+
+    label {
+      @extend .textStyle;
+      position: absolute;
+      z-index: -999;
+      top: 15px;
+    }
+
+    button {
+      @extend .textStyle;
+      background-color: inherit;
+      color: $colorMainYellow;
+      border: 0;
+      padding: 0;
+      margin-top: 15px;
+
+      i.iconText {
+        font-size: 28px;
+      }
+    }
+
+    input[type="text"]{
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      @extend .textStyle;
+      transition: 0.15s;
+
+      &:focus {
+        background-color: inherit;
+      }
+
+      &.active {
+        background-color: $colorBackgroundAside;
+      }
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 45px;
+  }
+
   }
 }

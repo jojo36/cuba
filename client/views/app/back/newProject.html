@@ -1,4 +1,28 @@
 <template name="backNewProject">
+  <div class="formContainer">
+    <div class="closeIcon">
+      <a href="{{ pathFor route='backDashboard' }}">
+        <i class="im im-x-mark-circle-o"></i>
+      </a>
+    </div>
+    <div class="frontGridContainer">
+      <form>
+        <!--<h1 class="textWeightBold textCapitalize textColorYellow">Nouveau Projet</h1>-->
+        <div class="form-group">
+          <label for="projectName">Nom du projet</label>
+          <input type="text" name="projectName" id="projectName" value="">
+        </div>
+        <div class="form-group">
+          <label for="projectName">Client</label>
+          <input type="text" name="projectName" id="projectName" value="">
+        </div>
+        <div class="form-group">
+          <button type="submit" name="button" class="textCapitalize"><i class="im im-floppy-disk iconText textColorYellow"></i> Créer le projet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--
   <main class="GridContainer">
     <section class="head">
       <h1 class="gridFlexPriority textCapitalize textWeightLighter">Nouveau Projet</h1>
@@ -17,5 +41,5 @@
       </form>
     </section>
   </main>
-  {{ > backAside }}
+  {{ > backAside }}-->
 </template>
