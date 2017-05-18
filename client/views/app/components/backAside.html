@@ -18,3 +18,15 @@
     </article>
   </aside>
 </template>
+
+<template name="backAsideSettings">
+  <aside class="GridContainer">
+    <article class="gridFlexPriority">
+      <h4 class="textCapitalize textPaddingBottom textWeightLighter">Client</h4>
+      <h3 class="textCapitalize textPaddingBottom textSizeHuge textWeightLighter">{{ this.customerName }}</h3>
+      <p class="textSizeSmall textWeightNormal textColorGrey textPaddingBottom">{{ this.customerSummary }}</p>
+      <p class="textSizeNormal textWeightLighter textPaddingBottom"><a href="mailto:{{ this.customerEmail }}">{{ this.customerEmail }}</a></p>
+      <p class="textSizeNormal textWeightLighter">{{ this.customerPhone }}</p>
+    </article>
+  </aside>
+</template>
