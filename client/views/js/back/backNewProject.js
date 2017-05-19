@@ -32,8 +32,16 @@ Template.backNewProject.events({
 
 Template.backNewProject.onRendered(function(){
 
-  $('input[type="text"]').click(function(){
+  $('input[type="text"]').focus(function(){
     $(this).addClass('active');
+  });
+
+  $('input[type="text"]').focusout(function(){
+    $(this).removeClass('active');
+  });
+
+  $('ul li.option').click(function(){
+    $(this).fadeOut();
   });
 
 });

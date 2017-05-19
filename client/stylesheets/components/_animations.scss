@@ -4,6 +4,107 @@
 
 */
 
+// INPUT ANIMATION
+
+.formContainer {
+
+  .form-group {
+    opacity: 0;
+    animation-name: fadeInInput;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+    &:first-child {
+      animation-delay: 2s;
+    }
+    &:nth-child(2) {
+      animation-delay: 2.2s;
+    }
+    &:nth-child(3) {
+      animation-delay: 2.4s;
+    }
+  }
+
+  ul.inputSelect {
+
+    &:hover {
+      background-color: $colorMainYellow;
+      height: 150px;
+      padding: 15px;
+
+      li {
+        color: $colorBackgroundAside;
+        position: relative;
+      }
+
+      i.selectIcon {
+        color: $colorBackgroundAside;
+        right: 25px;
+      }
+    }
+
+    li {
+
+      &.option {
+        &:hover {
+
+          &:after {
+            content: '';
+            position: absolute;
+            left: 45px;
+            width: 0;
+            height: 10px;
+            background-color: rgba($colorBackgroundAside, 0.2);
+            top: 50%;
+            margin-top: -5px;
+            animation-name: selectAfter;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+          }
+
+        }
+      }
+
+      &.active {
+
+        &:after {
+          content: '';
+          position: absolute;
+          left: 45px;
+          width: 400px;
+          height: 10px;
+          background-color: rgba($colorBackgroundAside, 0.2);
+          top: 50%;
+          margin-top: -5px;
+        }
+      }
+
+    }
+  }
+}
+
+@keyframes selectAfter {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 400px;
+  }
+}
+
+@keyframes fadeInInput {
+  0% {
+    opacity: 0;
+    transform: translate3d(0px, 45px, 0px);
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
 // TRANSITION
 
 .hider {
