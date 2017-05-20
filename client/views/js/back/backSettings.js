@@ -16,8 +16,8 @@ Template.backSettings.events({
 
     e.preventDefault();
 
-    var name = $('input[name="name"]').val();
-    var surName = $('input[name="surname"]').val();
+    var name = $('input[name="firstName"]').val();
+    var surName = $('input[name="surName"]').val();
     var email = $('input[name="email"]').val();
 
     if(name && surName && email){
