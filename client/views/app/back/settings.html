@@ -1,20 +1,30 @@
 <template name="backSettings">
-  <main class="GridContainer">
-  <section class="head">
-    <h1 class="textCapitalize textWeightLighter">Mon profil <span class="textColorRed textWeightBold">{{ currentUser.username }}</span></h1>
-    <button type="button" class="textSizeSmall textCapitalize logout" name="button">Déconnexion</button>
-  </section>
-  <section class="gridListArticle gridListArticleSearch gridFlexPriority">
-    <form>
-      <label class="textCapitalize textSizeSmall" for="">Nom</label>
-      <input type="text" name="name" value="{{ profile.name }}">
-      <label class="textCapitalize textSizeSmall" for="">Prénom</label>
-      <input type="text" name="surname" value="{{ profile.surName }}">
-      <label class="textCapitalize textSizeSmall" for="">Adresse Email</label>
-      <input type="mail" name="email" value="{{ profile.email }}">
-      <button type="submit" name="button" class="textCapitalize">Modifier mon compte</button>
-    </form>
-  </section>
-</main>
-{{ > backAsideSettings }}
+  <div class="formContainer">
+    <div class="closeIcon">
+      <a href="{{ pathFor route='backDashboard' }}">
+        <i class="im im-x-mark-circle-o"></i>
+      </a>
+    </div>
+    <div class="frontGridContainer">
+      <form>
+        <div class="form-group">
+          <div class="inputAvatar">
+            <i class="im im-cloud-upload"></i>
+          </div>
+        </div>
+        <div class="form-group">
+          {{ > input type='text' name='firstName' label='Nom' value=profile.name }}
+        </div>
+        <div class="form-group">
+          {{ > input type='text' name='surName' label='Prénom' value=profile.surName }}
+        </div>
+        <div class="form-group">
+          {{ > input type='email' name='email' label='Adresse Email' value=profile.email }}
+        </div>
+        <div class="form-group">
+          <button type="submit" name="button" class="textCapitalize"><i class="im im-floppy-disk iconText textColorYellow"></i> Modifier mon profil</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </template>

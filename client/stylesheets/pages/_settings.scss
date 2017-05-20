@@ -1,0 +1,59 @@
+.inputAvatar {
+  background: url('https://scontent-frt3-1.xx.fbcdn.net/v/t1.0-9/12661797_10205793337288763_7904500589806522279_n.jpg?oh=2de39e50c1f21b7c444131fff7f6a6e9&oe=59B2B79C');
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  margin: 35px 0px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  i {
+    color: $colorBackgroundAside;
+    font-size:  0;
+    z-index: 999;
+    transition: 0.15s;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 5px solid $colorMainYellow;
+    left: 15px;
+    top: 15px;
+    z-index: -99;
+    transition: 0.15s;
+    opacity: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($colorMainYellow, 0.1);
+    transition: 0.15s;
+    left: 0;
+    top: 0;
+  }
+
+  &:hover {
+
+    i {
+      font-size: 72px;
+    }
+
+    &:before {
+      left: 5px;
+      top: 5px;
+    }
+
+    &:after {
+      background-color: rgba($colorMainYellow, 0.5);
+    }
+  }
+}

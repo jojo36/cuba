@@ -5,9 +5,9 @@ Template.backNewProject.events({
     e.preventDefault();
 
     var projectName = $('input[name="projectName"]').val();
-    var projectCustomerId = $('select[name="projectCustomerId"]').val();
+    var projectCustomerId = $('li.inactive').attr('id');
 
-    if(projectName){
+    if(projectName && projectCustomerId){
 
       Projects.insert({
         name: projectName,
@@ -24,24 +24,18 @@ Template.backNewProject.events({
 
     }
 
-
-
   }
 
 });
 
 Template.backNewProject.onRendered(function(){
 
-  $('input[type="text"]').focus(function(){
-    $(this).addClass('active');
-  });
-
-  $('input[type="text"]').focusout(function(){
-    $(this).removeClass('active');
-  });
-
-  $('ul li.option').click(function(){
-    $(this).fadeOut();
+  $('ul').click(function(){
+    if($(this).hasClass('active')){
+      $(this).removeClass('active');
+    }else {
+      $('ul').addClass('active');
+    }
   });
 
 });

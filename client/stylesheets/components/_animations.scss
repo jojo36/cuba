@@ -4,6 +4,27 @@
 
 */
 
+// SETTINGS AVATAR ANIMATION
+
+.inputAvatar {
+  &:before {
+    animation-name: inputAvatarBorder;
+    animation-duration: 1s;
+    animation-delay: 2.2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes inputAvatarBorder {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 // INPUT ANIMATION
 
 .formContainer {
@@ -23,23 +44,49 @@
     &:nth-child(3) {
       animation-delay: 2.4s;
     }
+    &:nth-child(4) {
+      animation-delay: 2.6s;
+    }
+    &:nth-child(5) {
+      animation-delay: 2.8s;
+    }
+    &:nth-child(6) {
+      animation-delay: 3s;
+    }
   }
 
   ul.inputSelect {
 
-    &:hover {
+    &.active {
       background-color: $colorMainYellow;
       height: 150px;
       padding: 15px;
+      overflow-y: scroll;
 
       li {
         color: $colorBackgroundAside;
         position: relative;
+
+        &.option {
+          &.active {
+            &:after {
+              content: '';
+              position: absolute;
+              left: 45px;
+              width: 400px;
+              height: 10px;
+              background-color: rgba($colorBackgroundAside, 0.2);
+              top: 50%;
+              margin-top: -5px;
+            }
+          }
+        }
       }
 
       i.selectIcon {
         color: $colorBackgroundAside;
         right: 25px;
+        transform: rotate(180deg);
       }
     }
 
@@ -48,7 +95,7 @@
       &.option {
         &:hover {
 
-          &:after {
+          &::after {
             content: '';
             position: absolute;
             left: 45px;
@@ -62,20 +109,6 @@
             animation-fill-mode: forwards;
           }
 
-        }
-      }
-
-      &.active {
-
-        &:after {
-          content: '';
-          position: absolute;
-          left: 45px;
-          width: 400px;
-          height: 10px;
-          background-color: rgba($colorBackgroundAside, 0.2);
-          top: 50%;
-          margin-top: -5px;
         }
       }
 
@@ -220,7 +253,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: $textSizeNormal;
+    font-size: $textSizeBig;
 
     p {
       margin-right: 5px;
@@ -244,6 +277,10 @@
 
   &.success {
     background-color: $colorMainGreen;
+  }
+
+  &.warning {
+    background-color: $colorTextFade;
   }
 }
 

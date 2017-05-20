@@ -7,7 +7,6 @@
     </div>
     <div class="frontGridContainer">
       <form>
-        <!--<h1 class="textWeightBold textCapitalize textColorYellow">Nouveau Projet</h1>-->
         <div class="form-group">
           <label for="projectName">Nom du projet</label>
           <input type="text" name="projectName" id="projectName" value="">
@@ -17,7 +16,7 @@
             <i class="im im-angle-down selectIcon"></i>
             <li class="inactive">Client</li>
             {{ #each customers }}
-              <li class="option">{{ name }}</li>
+              {{ > inputSelect }}
             {{ /each }}
           </ul>
         </div>
@@ -27,24 +26,4 @@
       </form>
     </div>
   </div>
-  <!--
-  <main class="GridContainer">
-    <section class="head">
-      <h1 class="gridFlexPriority textCapitalize textWeightLighter">Nouveau Projet</h1>
-    </section>
-    <section class="gridListArticle gridListArticleSearch gridFlexPriority">
-      <form>
-        <label class="textCapitalize textSizeSmall" for="">Nom du projet</label>
-        <input type="text" name="projectName">
-        <label class="textCapitalize textSizeSmall" for="">Nom du projet</label><br>
-        <select name="projectCustomerId" class="textSizeSmall textCapitalize">
-          {{ #each customers }}
-            <option value="{{ _id }}">{{ name }}</option>
-          {{/each}}
-        </select><br>
-        <button type="submit" name="button" class="textCapitalize">Ajouter le projet</button>
-      </form>
-    </section>
-  </main>
-  {{ > backAside }}-->
 </template>

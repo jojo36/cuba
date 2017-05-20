@@ -39,7 +39,7 @@ button {
   }
 }
 
-input[type=text], input[type=password], input[type=mail], textarea {
+input[type=text], input[type=password], input[type=email], textarea {
   background: none;
   border: 1px solid rgba(white, 0.1);
   width: 100%;
@@ -112,7 +112,7 @@ $inputPadding: 0px 15px;
 
     ul.inputSelect {
       height: 60px;
-      overflow-y: hidden;
+      overflow: hidden;
       cursor: pointer;
       position: relative;
       transition: 0.25s;
@@ -125,6 +125,7 @@ $inputPadding: 0px 15px;
         top: 10px;
         top: 50%;
         margin-top: -20px;
+        transition: 0.15s;
       }
 
       li {
@@ -153,7 +154,7 @@ $inputPadding: 0px 15px;
       }
     }
 
-    input[type="text"]{
+    input[type=text], input[type=email]{
       border: 0;
       border-radius: 0;
       padding: 0px 0px 0px 15px;

@@ -4,6 +4,10 @@ Template.backSettings.onRendered(function(){
     Meteor.logout();
   });
 
+  $('.inputAvatar').mouseover(function(){
+    CUBA.notification.launch('Upload une image de profil', 'warning');
+  });
+
 });
 
 Template.backSettings.events({
