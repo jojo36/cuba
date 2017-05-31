@@ -1,21 +1,29 @@
 <template name="backNewProject">
-  <main class="GridContainer">
-    <section class="head">
-      <h1 class="gridFlexPriority textCapitalize textWeightLighter">Nouveau Projet</h1>
-    </section>
-    <section class="gridListArticle gridListArticleSearch gridFlexPriority">
+  <div class="formContainer">
+    <div class="closeIcon">
+      <a href="{{ pathFor route='backDashboard' }}">
+        <i class="im im-x-mark-circle-o"></i>
+      </a>
+    </div>
+    <div class="frontGridContainer">
       <form>
-        <label class="textCapitalize textSizeSmall" for="">Nom du projet</label>
-        <input type="text" name="projectName">
-        <label class="textCapitalize textSizeSmall" for="">Nom du projet</label><br>
-        <select name="projectCustomerId" class="textSizeSmall textCapitalize">
-          {{ #each customers }}
-            <option value="{{ _id }}">{{ name }}</option>
-          {{/each}}
-        </select><br>
-        <button type="submit" name="button" class="textCapitalize">Ajouter le projet</button>
+        <div class="form-group">
+          <label for="projectName">Nom du projet</label>
+          <input type="text" name="projectName" id="projectName" value="">
+        </div>
+        <div class="form-group">
+          <ul class="inputSelect">
+            <i class="im im-angle-down selectIcon"></i>
+            <li class="inactive">Client</li>
+            {{ #each customers }}
+              {{ > inputSelect }}
+            {{ /each }}
+          </ul>
+        </div>
+        <div class="form-group">
+          <button type="submit" name="button" class="textCapitalize"><i class="im im-floppy-disk iconText textColorYellow"></i> Créer le projet</button>
+        </div>
       </form>
-    </section>
-  </main>
-  {{ > backAside }}
+    </div>
+  </div>
 </template>

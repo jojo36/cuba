@@ -4,6 +4,305 @@
 
 */
 
+// SETTINGS AVATAR ANIMATION
+
+.inputAvatar {
+  &:before {
+    animation-name: inputAvatarBorder;
+    animation-duration: 1s;
+    animation-delay: 2.2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes inputAvatarBorder {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// INPUT ANIMATION
+
+.formContainer {
+
+  .form-group {
+    opacity: 0;
+    animation-name: fadeInInput;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+    &:first-child {
+      animation-delay: 2s;
+    }
+    &:nth-child(2) {
+      animation-delay: 2.2s;
+    }
+    &:nth-child(3) {
+      animation-delay: 2.4s;
+    }
+    &:nth-child(4) {
+      animation-delay: 2.6s;
+    }
+    &:nth-child(5) {
+      animation-delay: 2.8s;
+    }
+    &:nth-child(6) {
+      animation-delay: 3s;
+    }
+  }
+
+  ul.inputSelect {
+
+    &.active {
+      background-color: $colorMainYellow;
+      height: 150px;
+      padding: 15px;
+      overflow-y: scroll;
+
+      li {
+        color: $colorBackgroundAside;
+        position: relative;
+
+        &.option {
+          &.active {
+            &:after {
+              content: '';
+              position: absolute;
+              left: 45px;
+              width: 400px;
+              height: 10px;
+              background-color: rgba($colorBackgroundAside, 0.2);
+              top: 50%;
+              margin-top: -5px;
+            }
+          }
+        }
+      }
+
+      i.selectIcon {
+        color: $colorBackgroundAside;
+        right: 25px;
+        transform: rotate(180deg);
+      }
+    }
+
+    li {
+
+      &.option {
+        &:hover {
+
+          &::after {
+            content: '';
+            position: absolute;
+            left: 45px;
+            width: 0;
+            height: 10px;
+            background-color: rgba($colorBackgroundAside, 0.2);
+            top: 50%;
+            margin-top: -5px;
+            animation-name: selectAfter;
+            animation-duration: 0.5s;
+            animation-fill-mode: forwards;
+          }
+
+        }
+      }
+
+    }
+  }
+}
+
+@keyframes selectAfter {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 400px;
+  }
+}
+
+@keyframes fadeInInput {
+  0% {
+    opacity: 0;
+    transform: translate3d(0px, 45px, 0px);
+  }
+
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+    opacity: 1;
+  }
+}
+
+// TRANSITION
+
+.hider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: $colorBackgroundAside;
+  display: none;
+}
+
+.transition {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: $colorMainYellow;
+  width: 0;
+  z-index: 99999;
+  transition: 0.4s;
+  overflow: hidden;
+
+  .loader {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    height: 20px;
+    width: 0;
+    background-color: $colorBackgroundAside;
+    left: 50%;
+    margin-left: -75px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      height: 20px;
+      width: 0;
+      background-color: $colorMainYellow;
+      left: 50%;
+      margin-left: -75px;
+      z-index: 9999;
+    }
+
+  }
+
+  &.active {
+    animation-name: transition;
+    animation-duration: 2.8s;
+
+    .loader {
+      animation-name: loader;
+      animation-duration: 3s;
+      animation-delay: 0.4s;
+
+      &:after {
+        animation-name: loader;
+        animation-duration: 4s;
+        animation-delay: 1.5s;
+      }
+    }
+  }
+}
+
+@keyframes transition {
+  0% {
+    width: 0;
+  }
+
+  15% {
+    width: 100%;
+  }
+
+  70% {
+    width: 100%;
+    right: 0;
+  }
+
+  100% {
+    left: inherit;
+    right: -50%;
+  }
+}
+
+@keyframes loader {
+  0% {
+    width: 0;
+  }
+
+  10% {
+    width: 150px;
+  }
+
+  100% {
+    width: 150px;
+  }
+}
+
+// NOTIFICATIONS
+
+.notification {
+  position: fixed;
+  top: 0;
+  right: 45px;
+  width: 350px;
+  padding: 20px;
+  opacity: 0;
+  z-index: 999;
+
+  .notificationContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $textSizeBig;
+
+    p {
+      margin-right: 5px;
+    }
+
+    i.notifClose {
+      cursor: pointer;
+      font-size: 20px;
+      padding: 0px 15px 0px 0px ;
+    }
+  }
+
+  &.notifAnimate {
+    animation-name: animScale;
+    animation-duration: 4s;
+  }
+
+  &.error {
+    background-color: $colorMainRed;
+  }
+
+  &.success {
+    background-color: $colorMainGreen;
+  }
+
+  &.warning {
+    background-color: $colorTextFade;
+  }
+}
+
+@keyframes animScale {
+	0% {
+    opacity: 0;
+    transform: translate3d(0px, -45px, 0px);
+  }
+	10% {
+    opacity: 1;
+    transform: translate3d(0px, 45px, 0px);
+  }
+  90% {
+    opacity: 1;
+    transform: translate3d(0px, 45px, 0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0px, -45px, 0px);
+  }
+}
+
 // PLACEHOLDING
 
 .textPlaceholding {

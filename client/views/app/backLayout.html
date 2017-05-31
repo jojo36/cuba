@@ -5,9 +5,11 @@
   <link rel="stylesheet" href="css/cuba.css">
 </head>
 <body class="back">
+  {{ > loader }}
+  {{ > notifications }}
   <div class="content">
-    {{> backHeader  }}
-    {{ >yield }}
+    {{ > backHeader  }}
+    {{ > yield }}
   </div>
 </body>
 </template>

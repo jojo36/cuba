@@ -18,7 +18,8 @@ Template.frontRegister.events({
 			password: password,
 			profile: {
         name: name,
-        surName: surname
+        surName: surname,
+        email: email
       }
 		};
 
