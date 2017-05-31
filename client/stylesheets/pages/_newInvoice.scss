@@ -4,14 +4,35 @@
     &__header {
         display: flex;
         justify-content: space-between;
+
+        &__to {
+            font-size: 18px;
+
+            h3 {
+                font-size: 26px;
+                font-weight: bold;
+            }
+        }
+
+        &__total {
+            h3 {
+                font-size: 18px;
+            }
+
+            b {
+                font-size: 22px;
+            }
+        }
     }
 
     .contactInfos {
-        color: rgba(#fff, .8);
+        font-size: 16px;
+        color: rgba(#fff, .7);
     }
 
     &__body {
         table {
+            margin-top: 62px;
             width: 100%;
             text-align: center;
         }
@@ -19,6 +40,43 @@
         tbody, thead {
             th:first-child {
                 text-align: left;
+            }
+        }
+
+        thead {
+
+            th {
+                border-bottom: solid 2px rgba(#fff, .1);
+                padding: 8px 10px;
+                font-size: 20px;
+                font-weight: normal;
+
+                &:first-child {
+                    text-align: left;
+                }
+            }
+        }
+
+        tbody {
+            td {
+                padding: 8px 10px;
+                font-size: 17px;
+                font-weight: normal;
+                color: rgba(#fff, .8);
+
+                input {
+                    margin: 0;
+                    padding: 8px 15px;
+                    font-size: 16px;
+                }
+
+                &:first-child {
+                    text-align: left;
+                }
+
+                &:last-child {
+                    text-align: center;
+                }
             }
         }
     }
