@@ -7,11 +7,10 @@
     </section>
     <section class="gridListArticle gridListArticleSearch gridFlexPriority">
       {{ #each customers }}
-      <article class="gridArticle">
-        <h2 class="textCapitalize textPaddingBottom textWeightLighter">{{ name }}</h2>
-        <p class="textCapitalize textColorGrey textAlignLeft">Mis à jour à 23h35</p>
-      </article>
-      {{/each}}
+        <a href="{{ pathFor route='backEditCustomer' }}">
+          {{ > blockArticle name=name class='customer' }}
+        </a>
+      {{ /each }}
     </section>
   </main>
   {{> backAside  }}

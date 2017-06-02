@@ -1,33 +1,46 @@
 <template name="backNewCustomer">
-  <main class="GridContainer">
-    <section class="head">
-      <h1 class="gridFlexPriority textCapitalize textWeightLighter">Nouveau Client</h1>
-    </section>
-    <section class="gridListArticle gridListArticleSearch gridFlexPriority">
+  <div class="formContainer">
+    <div class="closeIcon">
+      <a href="{{ pathFor route='backDashboard' }}">
+        <i class="im im-x-mark-circle-o"></i>
+      </a>
+    </div>
+    <div class="frontGridContainer">
       <form>
-        <label class="textCapitalize textSizeSmall" for="">Titre du client</label>
-        <input type="text" name="name" value="">
-        <label class="textCapitalize textSizeSmall" for="">Nom du client</label>
-        <input type="text" name="lastName" value="">
-        <label class="textCapitalize textSizeSmall" for="">Prénom du client</label>
-        <input type="text" name="surName" value="">
-        <label class="textCapitalize textSizeSmall" for="">Description</label>
-        <textarea name="summary"></textarea>
-        <label class="textCapitalize textSizeSmall" for="">Email du client</label>
-        <input type="mail" name="email" value="">
-        <label class="textCapitalize textSizeSmall" for="">Téléphone</label>
-        <input type="text" name="phone" value="">
-        <label class="textCapitalize textSizeSmall" for="">Adresse</label>
-        <input type="text" name="address" value="">
-        <label class="textCapitalize textSizeSmall" for="">Code Postal</label>
-        <input type="text" name="zipCode" value="">
-        <label class="textCapitalize textSizeSmall" for="">Ville</label>
-        <input type="text" name="city" value="">
-        <label class="textCapitalize textSizeSmall" for="">Pays</label>
-        <input type="text" name="country" value="">
-        <button type="submit" name="button" class="textCapitalize">Ajouter le client</button>
+        <div class="form-group form-group-small">
+          {{ > input type='text' name='name' label='Titre du client' }}
+        </div>
+        <div class="form-group form-group-small">
+          {{ > input type='text' name='lastName' label='Nom du client' }}
+        </div>
+        <div class="form-group form-group-small">
+          {{ > input type='text' name='firstName' label='Prénom du client' }}
+        </div>
+        <div class="form-group form-group-small">
+          {{ > input type='email' name='email' label='Adresse email' }}
+        </div>
+        <div class="form-group form-group-small">
+          {{ > input type='text' name='summary' label='Description' }}
+        </div>
+        <div class="form-group form-group-small">
+          {{ > input type='text' name='phoneNumber' label='Téléphone' }}
+        </div>
+        <div class="form-group form-group-small">
+          {{ > input type='text' name='address' label='Adresse (Rue)' }}
+        </div>
+        <div class="form-group form-group-small">
+          {{ > input type='text' name='zipCode' label='Code Postal' }}
+        </div>
+        <div class="form-group form-group-small">
+          {{ > input type='text' name='city' label='Ville' }}
+        </div>
+        <div class="form-group form-group-small">
+          {{ > input type='text' name='country' label='Pays' }}
+        </div>
+        <div class="form-group">
+          <button type="submit" name="button" class="textCapitalize"><i class="im im im-floppy-disk iconText textColorYellow"></i> Créer le client</button>
+        </div>
       </form>
-    </section>
-  </main>
-  {{> backAside }}
+    </div>
+  </div>
 </template>

@@ -10,13 +10,9 @@
     </section>
     <section class="gridListArticle gridListArticleSearch gridFlexPriority">
       {{ #each projects }}
-      <article class="gridArticle">
-        <a href="{{ pathFor route='backProject' }}">
-          <h2 class="textCapitalize textPaddingBottom textWeightLighter">{{ name }}</h2>
-          <p class="textCapitalize textColorGrey textAlignLeft">créé le {{ formatDate createdAt }}</p>
-        </a>
-        <button name="delete" class="action"><i class="im im-x-mark-circle-o textColorRed"></i></button>
-      </article>
+      <a href="{{ pathFor route='backProject' }}">
+        {{ > blockArticle }}
+      </a>
       {{ /each }}
     </section>
   </main>

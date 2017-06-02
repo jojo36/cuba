@@ -1,11 +1,13 @@
 Template.backProjects.onRendered(function(){
 
   $('button[name="delete"]').hover(function(){
-    $(this).parent($('article')).addClass('delete');
+    var parent = $(this).parent($('article'));
+    parent.addClass('delete');
   });
+
   $('button[name="delete"]').mouseleave(function(){
     $(this).parent($('article')).removeClass('delete');
-  })
+  });
 
 });
 

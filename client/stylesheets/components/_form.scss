@@ -103,11 +103,19 @@ $inputPadding: 0px 15px;
   }
 
   form {
-
     padding: 45px;
 
     .form-group {
       position: relative;
+
+      &.form-group-small {
+        width: 50%;
+        display: inline-block;
+
+        &:nth-child(odd){
+          margin-left: -4px;
+        }
+      }
     }
 
     ul.inputSelect {

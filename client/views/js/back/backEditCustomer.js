@@ -1,4 +1,4 @@
-Template.backNewCustomer.events({
+Template.backEditCustomer.events({
 
   'submit form': function(e, template){
 
@@ -19,31 +19,35 @@ Template.backNewCustomer.events({
 
 
       var customer = Customers.findOne({ name: name });
+      var customerName = Customers.findOne();
 
-      if(customer){
+      if(customer && name != customerName.name){
 
         CUBA.notification.launch('Le client ' + name + ' existe déjà', 'error');
 
       }else {
 
-        Customers.insert({
-          name: name,
-          email: email,
-          lastName: lastName,
-          firstName: firstName,
-          summary: summary,
-          phoneNumber: phoneNumber,
-          address: {
-            street: street,
-            zipCode: zipCode,
-            city: city,
-            country: country
-          },
-          userId: Meteor.userId(),
-          createdAt: new Date()
+        Customers.update({ _id: customerName._id }, {
+          $set: {
+            name: name,
+            email: email,
+            lastName: lastName,
+            firstName: firstName,
+            summary: summary,
+            phoneNumber: phoneNumber,
+            address: {
+              street: street,
+              zipCode: zipCode,
+              city: city,
+              country: country
+            },
+            userId: Meteor.userId(),
+            createdAt: new Date()
+          }
+
         });
 
-        CUBA.notification.launch('Le client ' + name + ' a été créé avec succès', 'success');
+        CUBA.notification.launch('Le client ' + name + ' a été modifié avec succès', 'success');
 
       }
 
