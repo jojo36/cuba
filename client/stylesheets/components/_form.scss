@@ -39,7 +39,7 @@ button {
   }
 }
 
-input[type=text], input[type=password], input[type=email], textarea {
+input[type=text], input[type=password], input[type=email], textarea, input[type=number] {
   background: none;
   border: 1px solid rgba(white, 0.1);
   width: 100%;
@@ -47,6 +47,7 @@ input[type=text], input[type=password], input[type=email], textarea {
   margin: 15px 0px;
   color: white;
   transition: 0.45s;
+  font-size: $textSizeSmall;
 
   &:focus {
     background-color: $colorMainRed;
@@ -155,10 +156,29 @@ $inputPadding: 0px 15px;
       color: $colorMainYellow;
       border: 0;
       padding: 0;
-      margin: 15px 15px;
+      margin: 0px 15px;
 
       i.iconText {
         font-size: 28px;
+      }
+    }
+
+    h1 {
+      @extend button;
+      color: $colorTextGrey;
+      margin-bottom: 15px;
+    }
+
+    a {
+      @extend button;
+      display: block;
+      margin: 25px 15px;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:active {
+        transform: scale(0.95);
       }
     }
 

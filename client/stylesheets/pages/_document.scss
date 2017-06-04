@@ -1,0 +1,48 @@
+section.head {
+  margin-top: 5px;
+}
+
+section.document {
+
+  max-width: 960px;
+  margin: 45px auto;
+  background-color: $colorBackgroundAside;
+  padding: 0px 45px 45px 45px;
+  position: relative;
+
+  .customer {
+    padding: 45px 0px;
+  }
+
+  .company {
+    position: absolute;
+    top: 100px;
+    right: 45px;
+  }
+
+  .servicies {
+    margin: 45px 0px;
+    border-collapse: collapse;
+    width: 100%;
+
+    th {
+      background-color: rgba($colorBackgroundBody, 0.3);
+      text-transform: uppercase;
+    }
+
+    td, th {
+      border: 1px solid rgba($colorTextGrey, 0.1);
+      padding: 15px;
+    }
+
+  }
+
+  button.addSection {
+
+    i {
+      vertical-align: -7px;
+      margin-right: 10px;
+    }
+  }
+
+}

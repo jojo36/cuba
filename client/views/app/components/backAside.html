@@ -14,7 +14,31 @@
       <h3 class="textCapitalize textPaddingBottom textSizeHuge textWeightLighter">{{ this.customerName }}</h3>
       <p class="textSizeSmall textWeightNormal textColorGrey textPaddingBottom">{{ this.customerSummary }}</p>
       <p class="textSizeNormal textWeightLighter textPaddingBottom"><a href="mailto:{{ this.customerEmail }}">{{ this.customerEmail }}</a></p>
-      <p class="textSizeNormal textWeightLighter">{{ this.customerPhone }}</p>
+      <p class="textSizeNormal textWeightLighter textPaddingBottom">{{ this.customerPhone }}</p>
+      <p class="asideBtn red"><a href="{{ pathFor route='backNewQuotation' _id=projectId }}" class="textCapitalize textSizeNormal">Créer un devis</a></p>
+    </article>
+  </aside>
+</template>
+
+<template name="backAsideProjectQuotation">
+  <aside class="GridContainer">
+    <article class="gridFlexPriority">
+      <h4 class="textCapitalize textPaddingBottom textWeightLighter">Client</h4>
+      <h3 class="textCapitalize textPaddingBottom textSizeHuge textWeightLighter">{{ this.customerName }}</h3>
+      <p class="textSizeSmall textWeightNormal textColorGrey textPaddingBottom">{{ this.customerSummary }}</p>
+      <p class="textSizeNormal textWeightLighter textPaddingBottom"><a href="mailto:{{ this.customerEmail }}">{{ this.customerEmail }}</a></p>
+      <p class="textSizeNormal textWeightLighter textPaddingBottom">{{ this.customerPhone }}</p>
+      <p class="asideBtn red"><a class="textCapitalize textSizeNormal saveDocument"><i class="im im-check-mark textIcon"></i> Publier</a></p>
+    </article>
+  </aside>
+</template>
+
+<template name="backAsideProjectViewQuotation">
+  <aside class="GridContainer">
+    <article class="gridFlexPriority">
+      <h3 class="textCapitalize textPaddingBottom textSizeHuge textWeightLighter">Devis</h3>
+      <h4 class="textCapitalize textPaddingBottom textWeightLighter">{{ documents._id }}</h4>
+      <p class="asideBtn red"><a class="textCapitalize textSizeNormal saveDocument"><i class="im im-x-mark textIcon"></i> Supprimer</a></p>
     </article>
   </aside>
 </template>

@@ -44,3 +44,19 @@ Meteor.publish('getListProjects', function(userId){
   return Projects.find({ userId: userId });
 
 });
+
+// GET LIST QUOTATIONS
+
+Meteor.publish('getListQuotations', function(projectId){
+
+  return Documents.find({ projectId: projectId });
+
+});
+
+// GET DOCUMENT
+
+Meteor.publish('getDocument', function(documentId){
+
+  return Documents.find({ _id: documentId });
+
+});

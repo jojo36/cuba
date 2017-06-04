@@ -1,0 +1,54 @@
+<template name="backQuotation">
+  <main class="GridContainer">
+    <section class="head">
+      <a href="{{ pathFor route='backListQuotations' _id=documents.projectId }}"><h2 class="gridFlexPriority textCapitalize textWeightLighter"><i class="im im-arrow-left textIcon" style="vertical-align: -3px;"></i> Retour</h2></a>
+      <h1 class="textCapitalize textWeightLighter"> <span class="textColorYellow textWeightBold">{{ documents._id }}</span></h1>
+    </section>
+    <section class="document">
+      <form>
+      <div class="customer">
+        <ul class="textSizeNormal">
+          <li class="textCapitalize textWeightBold">{{ documents.customer.name }}</li>
+          <li>{{ documents.customer.firstName }} {{ documents.customer.lastName }}</li>
+          <li>{{ documents.customer.address.street }}</li>
+          <li>{{ documents.customer.address.zipCode }} {{ documents.customer.address.city }}</li>
+          <li>{{ documents.customer.address.country }}</li>
+        </ul>
+      </div>
+      <div class="company">
+        {{ #with currentUser }}
+        <ul>
+          {{ #with profile }}
+          <li class="textCapitalize textWeightBold">{{ name }} {{ surName }}</li>
+          {{ /with }}
+          <li>{{ documents.companyName }}</li>
+        </ul>
+        {{ /with }}
+      </div>
+      <p>{{ documents.summary }}</p>
+      <table class="servicies">
+        <thead>
+          <tr>
+            <th>Qté</th>
+            <th width="400px">Description</th>
+            <th>Durée (jours)</th>
+            <th>Prix Unit.</th>
+          </tr>
+        </thead>
+        <tbody style="vertical-align: top;">
+          <tr class="section">
+            <td class="textAlignCenter">{{ documents.services.[0] }}</td>
+            <td>
+              <p class="textWeightBold">{{ documents.services.[1] }}</p>
+              <p class="colorTextGrey">{{ documents.services.[2] }}</p>
+            </td>
+            <td class="textAlignCenter">{{ documents.services.[3] }}</td>
+            <td class="textAlignCenter">{{ documents.services.[4] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    </section>
+  </main>
+  {{> backAsideProjectViewQuotation }}
+</template>

@@ -1,0 +1,24 @@
+<template name="backListQuotations">
+  <main class="GridContainer">
+    <section class="head">
+      <h1 class="gridFlexPriority textCapitalize textWeightLighter">{{ project.name }} <span class="textColorYellow textWeightBold">#Devis</span></h1>
+      <form class="" action="index.html" method="post">
+        <select class="textCapitalize textWeightLighter TextSizeSmall" name="">
+          <option value="">Trier par date</option>
+        </select>
+      </form>
+    </section>
+    <section class="gridListArticle gridListArticleSearch gridFlexPriority">
+      {{ #each documents }}
+      <a href="{{ pathFor route='backQuotation' _id=_id }}">
+        <article class="gridArticle {{ class }}">
+          <h2 class="textCapitalize textPaddingBottom textWeightLighter">Devis</h2>
+          <p class="textCapitalize textColorGrey textAlignLeft">créé le {{ formatDate createdAt }}</p>
+          <button name="delete" class="action"><i class="im im-x-mark-circle-o textColorRed"></i></button>
+        </article>
+      </a>
+      {{ /each }}
+    </section>
+  </main>
+  {{> backAsideProject projectId=project._id customerName=customer.name customerSummary=customer.summary customerEmail=customer.email customerPhone=customer.phoneNumber  }}
+</template>

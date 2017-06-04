@@ -25,9 +25,12 @@ Template.input.onRendered(function(){
     }
   });
 
-  $('input').each(function(){
-    if($(this).length > 0){
-      $(this).addClass('active');
+  $('input').each(function(index){
+
+    var input = $('input:nth-child(' + index + ')');
+
+    if(input.val() != ''){
+      input.addClass('active');
     }
   });
 

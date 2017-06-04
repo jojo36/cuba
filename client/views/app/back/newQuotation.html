@@ -1,0 +1,86 @@
+<template name="backNewQuotation">
+  <main class="GridContainer">
+    <section class="head">
+      <a href="{{ pathFor route='backListQuotations' _id=project._id }}"><h2 class="gridFlexPriority textCapitalize textWeightLighter"><i class="im im-arrow-left textIcon" style="vertical-align: -3px;"></i> Retour</h2></a>
+      <h1 class="textCapitalize textWeightLighter">{{ project.name }} <span class="textColorYellow textWeightBold">#Créer un devis</span></h1>
+    </section>
+    <section class="document">
+      <form>
+      <div class="customer">
+        <ul class="textSizeNormal">
+          <li class="textCapitalize textWeightBold" id="customerName">{{ customer.name }}</li>
+          <li><span id="customerFirstName">{{ customer.firstName }}</span> <span id="customerLastName">{{ customer.lastName }}</span></li>
+          <li id="customerStreet">{{ customer.address.street }}</li>
+          <li><span id="customerZipCode">{{ customer.address.zipCode }}</span> <span id="customerCity">{{ customer.address.city }}</span></li>
+          <li id="customerCountry">{{ customer.address.country }}</li>
+        </ul>
+      </div>
+      <div class="company">
+        {{ #with currentUser }}
+        <ul>
+          {{ #with profile }}
+          <li class="textCapitalize textWeightBold">{{ name }} {{ surName }}</li>
+          <li>{{ > input type='text' name='companyName' label='Nom de l\'entreprise' }}</li>
+          {{ /with }}
+        </ul>
+        {{ /with }}
+      </div>
+      {{ > textarea name="summary" label="Description brève du devis" }}
+      <table class="servicies">
+        <thead>
+          <tr>
+            <th>Qté</th>
+            <th>Description</th>
+            <th>Durée (jours)</th>
+            <th>Prix Unit.</th>
+          </tr>
+        </thead>
+        <tbody style="vertical-align: top;">
+          <tr class="section">
+            <td class="textAlignCenter">{{ > input type='number' name='serviceQty' label='Quantité' }}</td>
+            <td>
+              {{ > input type='text' name='serviceTitle' label='Titre' }}
+              {{ > textarea name='serviceSummary' label='Description' }}
+            </td>
+            <td class="textAlignCenter">{{ > input type='number' name='serviceTime' label='Durée' }}</td>
+            <td class="textAlignCenter">{{ > input type='number' name='servicePrice' label='Prix Unitaire' }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" name="addSection" class="addSection textSizeSmall textCapitalize"><i class="im im-plus-circle iconText"></i> Ajouter une section</button>
+    </form>
+    </section>
+  </main>
+  {{> backAsideProjectQuotation projectId=project._id customerName=customer.name customerSummary=customer.summary customerEmail=customer.email customerPhone=customer.phoneNumber  }}
+</template>
+
+<!--
+
+<tbody>
+  <tr>
+    <td class="textAlignCenter">1</td>
+    <td>
+      <p class="textWeightBold textCapitalize textPaddingBottom">Développement</p>
+      <p class="textColorGrey textPaddingBottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <p class="textWeightBold textCapitalize textPaddingBottom">Développement</p>
+      <p class="textColorGrey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    </td>
+    <td class="textAlignCenter">3 (Jours)</td>
+    <td class="textAlignCenter">450 €</td>
+    <td class="textAlignCenter">1350 €</td>
+  </tr>
+  <tr>
+    <td class="textAlignCenter">1</td>
+    <td>
+      <p class="textWeightBold textCapitalize textPaddingBottom">Développement</p>
+      <p class="textColorGrey textPaddingBottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+      <p class="textWeightBold textCapitalize textPaddingBottom">Développement</p>
+      <p class="textColorGrey">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    </td>
+    <td class="textAlignCenter">3 (Jours)</td>
+    <td class="textAlignCenter">450 €</td>
+    <td class="textAlignCenter">1350 €</td>
+  </tr>
+</tbody>
+
+-->

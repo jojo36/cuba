@@ -24,9 +24,9 @@ $colorTextFade: #47495a;
 
 // CLASS
 
-.textColorGrey {color: $colorTextGrey;}
-.textColorYellow { color: $colorMainYellow; }
-.textColorGreen { color: $colorMainGreen; }
-.textColorBlue { color: $colorMainBlue; }
-.textColorRed { color: $colorMainRed; }
-.textColorFade { color: $colorTextFade; }
+.textColorGrey {color: $colorTextGrey !important;}
+.textColorYellow { color: $colorMainYellow !important; }
+.textColorGreen { color: $colorMainGreen !important; }
+.textColorBlue { color: $colorMainBlue !important; }
+.textColorRed { color: $colorMainRed !important; }
+.textColorFade { color: $colorTextFade !important; }

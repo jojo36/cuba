@@ -1,26 +1,34 @@
 <template name="backProject">
-  <main class="GridContainer">
-    <section class="head">
-      <h1 class="gridFlexPriority textCapitalize textWeightLighter">{{ project.name }}</h1>
-        <p></p>
-    </section>
-    <section class="gridListArticle" style="margin: auto;">
-      <a href="#">
-        <article class="gridArticleBig sectionProject sectionProjectGant">
-          <h2 class="textWeightLighter textCapitalize textColorGreen textSizeHuge">Gant</h2>
-        </article>
+  <div class="formContainer">
+    <div class="closeIcon">
+      <a href="{{ pathFor route='backDashboard' }}">
+        <i class="im im-x-mark-circle-o"></i>
       </a>
-      <a href="{{ pathFor 'backListInvoices' _id=project._id }}">
-        <article class="gridArticleNormal sectionProject sectionProjectQuotation">
-          <h2 class="textWeightLighter textCapitalize textColorYellow textSizeHuge">Devis</h2>
-        </article>
-      </a>
-      <a href="#">
-        <article class="gridArticleNormal sectionProject sectionProjectInvoice">
-          <h2 class="textWeightLighter textCapitalize textColorRed textSizeHuge">Factures</h2>
-        </article>
-      </a>
-    </section>
-  </main>
-  {{> backAsideProject customerName=customer.name customerSummary=customer.infos.summary customerEmail=customer.email customerPhone=customer.phone  }}
+    </div>
+    <div class="frontGridContainer">
+      <form>
+        <div class="form-group">
+          <a href="{{ pathFor route='backEditProject' _id=project._id }}" class="textColorGrey">Projet #{{ project.name }}</a>
+        </div>
+        <div class="form-group">
+          <a href="{{ pathFor route='backListQuotations' _id=project._id }}"><i class="im im-file iconText textColorYellow"></i> Devis</a>
+        </div>
+        <div class="form-group">
+          <a href="" class="textCapitalize"><i class="im im-file iconText textColorYellow"></i> Factures</a>
+        </div>
+        {{ #if customer }}
+        <div class="form-group">
+          <a href="{{ pathFor route='backEditCustomer' _id=project.customerId }}" class="textCapitalize"><i class="im im-pencil iconText textColorYellow"></i> Modifier le client</a>
+        </div>
+        {{ else }}
+        <div class="form-group">
+          <a href="{{ pathFor route='backEditProject' _id=project._id }}" class="textCapitalize"><i class="im im-link iconText textColorYellow"></i> Lier à un client</a>
+        </div>
+        {{ /if }}
+        <div class="form-group">
+          <button type="button" class="textColorRed" name="delete"><i class="im im-x-mark iconText textColorRed"></i> Supprimer le projet</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </template>
