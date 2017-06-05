@@ -1,52 +1,55 @@
 <template name="backNewInvoice">
   <main class="GridContainer">
     <section class="head">
-      <h1 class="gridFlexPriority textCapitalize textWeightLighter">Créer une facture</h1>
-      <form class="" action="index.html" method="post">
-      </form>
+      <a href="{{ pathFor route='backListQuotations' _id=project._id }}"><h2 class="gridFlexPriority textCapitalize textWeightLighter"><i class="im im-arrow-left textIcon" style="vertical-align: -3px;"></i> Retour</h2></a>
+      <h1 class="textCapitalize textWeightLighter">{{ project.name }} <span class="textColorYellow textWeightBold">#Créer une facture</span></h1>
     </section>
-    <section class="gridListArticle gridListArticleSearch gridFlexPriority">
-      <div class="invoice">
-          <div class="invoice__header">
-            <div class="invoice__header__to">
-                <h3>{{ customer.name }}</h3>
-                <p class="adress">
-                    {{ customer.address.street }}, {{ customer.address.city }}<br>
-                    {{ customer.address.zipCode }} {{ customer.address.country }}
-                </p>
-                <P class="contactInfos">
-                    {{ customer.email }}<br>
-                    {{ customer.phone }}
-                </P>
-            </div>
-
-              <div class="invoice__header__total">
-                  <h3>Total dû: 3 200€</h3>
-              </div>
-          </div>
-
-          <div class="invoice__body">
-              <table>
-                  <thead>
-                      <tr>
-                          <th>Nom du service</th>
-                          <th>Prix HT</th>
-                          <th>Quantitée</th>
-                          <th>Total</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <th scope="row">1</th>
-                          <td>325€</td>
-                          <td>3</td>
-                          <td>1 023€</td>
-                      </tr>
-                  </tbody>
-              </table>
-          </div>
+    <section class="document">
+      <form>
+      <div class="customer">
+        <ul class="textSizeNormal">
+          <li class="textCapitalize textWeightBold" id="customerName">{{ customer.name }}</li>
+          <li><span id="customerFirstName">{{ customer.firstName }}</span> <span id="customerLastName">{{ customer.lastName }}</span></li>
+          <li id="customerStreet">{{ customer.address.street }}</li>
+          <li><span id="customerZipCode">{{ customer.address.zipCode }}</span> <span id="customerCity">{{ customer.address.city }}</span></li>
+          <li id="customerCountry">{{ customer.address.country }}</li>
+        </ul>
       </div>
+      <div class="company">
+        {{ #with currentUser }}
+        <ul>
+          {{ #with profile }}
+          <li class="textCapitalize textWeightBold">{{ name }} {{ surName }}</li>
+          <li>{{ > input type='text' name='companyName' label='Nom de l\'entreprise' }}</li>
+          {{ /with }}
+        </ul>
+        {{ /with }}
+      </div>
+      {{ > textarea name="summary" label="Description brève du devis" }}
+      <table class="servicies">
+        <thead>
+          <tr>
+            <th>Qté</th>
+            <th>Description</th>
+            <th>Durée (jours)</th>
+            <th>Prix Unit.</th>
+          </tr>
+        </thead>
+        <tbody style="vertical-align: top;">
+          <tr class="section">
+            <td class="textAlignCenter">{{ > input type='number' name='serviceQty' label='Quantité' }}</td>
+            <td>
+              {{ > input type='text' name='serviceTitle' label='Titre' }}
+              {{ > textarea name='serviceSummary' label='Description' }}
+            </td>
+            <td class="textAlignCenter">{{ > input type='number' name='serviceTime' label='Durée' }}</td>
+            <td class="textAlignCenter">{{ > input type='number' name='servicePrice' label='Prix Unitaire' }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" name="addSection" class="addSection textSizeSmall textCapitalize"><i class="im im-plus-circle iconText"></i> Ajouter une section</button>
+    </form>
     </section>
   </main>
-  {{> backAsideProject customerName=customer.name customerSummary=customer.infos.summary customerEmail=customer.email customerPhone=customer.phone  }}
+  {{> backAsideProjectQuotation projectId=project._id customerName=customer.name customerSummary=customer.summary customerEmail=customer.email customerPhone=customer.phoneNumber  }}
 </template>

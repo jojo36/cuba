@@ -14,7 +14,7 @@
           <a href="{{ pathFor route='backListQuotations' _id=project._id }}"><i class="im im-file iconText textColorYellow"></i> Devis</a>
         </div>
         <div class="form-group">
-          <a href="" class="textCapitalize"><i class="im im-file iconText textColorYellow"></i> Factures</a>
+          <a href="{{ pathFor route='backListInvoices' _id=project._id }}" class="textCapitalize"><i class="im im-file iconText textColorYellow"></i> Factures</a>
         </div>
         {{ #if customer }}
         <div class="form-group">

@@ -63,6 +63,8 @@ Template.backNewQuotation.events({
 
     CUBA.notification.launch('Devis publié avec succès', 'success');
 
+    Router.go('backListQuotations', { _id: project._id });
+
 
   }
 

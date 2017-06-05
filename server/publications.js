@@ -47,9 +47,9 @@ Meteor.publish('getListProjects', function(userId){
 
 // GET LIST QUOTATIONS
 
-Meteor.publish('getListQuotations', function(projectId){
+Meteor.publish('getListDocuments', function(projectId, doc){
 
-  return Documents.find({ projectId: projectId });
+  return Documents.find({ projectId: projectId, doc: doc });
 
 });
 

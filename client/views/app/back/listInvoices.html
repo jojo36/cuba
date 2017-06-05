@@ -1,21 +1,21 @@
 <template name="backListInvoices">
   <main class="GridContainer">
     <section class="head">
-      <h1 class="gridFlexPriority textCapitalize textWeightLighter">{{ project.name }} <span class="textColorRed textWeightBold">#Factures</span></h1>
-      <form>
-        <select class="textCapitalize textWeightLighter TextSizeSmall" name="">
-          <option value="">Trier par date</option>
-        </select>
-      </form>
+      <a href="{{ pathFor route='backProject' _id=project._id }}"><h2 class="gridFlexPriority textCapitalize textWeightLighter"><i class="im im-arrow-left textIcon" style="vertical-align: -3px;"></i> Retour</h2></a>
+      <h1 class="textCapitalize textWeightLighter">{{ project.name }} <span class="textColorYellow textWeightBold">#Factures</span></h1>
     </section>
     <section class="gridListArticle gridListArticleSearch gridFlexPriority">
-      {{ #each projects }}
-      <article class="gridArticle">
-        <h2 class="textCapitalize textPaddingBottom textWeightLighter">{{ name }}</h2>
-        <p class="textCapitalize textColorGrey textAlignLeft">Mis à jour à 23h35</p>
-      </article>
+      {{ #each documents }}
+      <a href="{{ pathFor route='backQuotation' _id=_id }}">
+        <article class="gridArticle {{ class }}">
+          <h2 class="textCapitalize textPaddingBottom textWeightLighter">Facture</h2>
+          <h3 class="textCapitalize textColorGrey textAlignLeft">{{ _id }}</h3>
+          <p class="textCapitalize textColorGrey textAlignLeft">créé le {{ formatDate createdAt }}</p>
+          <button name="delete" class="action"><i class="im im-x-mark-circle-o textColorRed"></i></button>
+        </article>
+      </a>
       {{ /each }}
     </section>
   </main>
-  {{> backAsideProject customerName=customer.name customerSummary=customer.infos.summary customerEmail=customer.email customerPhone=customer.phone  }}
+  {{> backAsideProjectInvoice projectId=project._id customerName=customer.name customerSummary=customer.summary customerEmail=customer.email customerPhone=customer.phoneNumber  }}
 </template>
