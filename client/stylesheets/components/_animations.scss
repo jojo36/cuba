@@ -209,17 +209,17 @@
 
   &.active {
     animation-name: transition;
-    animation-duration: 2.8s;
+    animation-duration: 2.1s;
 
     .loader {
       animation-name: loader;
-      animation-duration: 3s;
-      animation-delay: 0.4s;
+      animation-duration: 1.7s;
+      animation-delay: 0.3s;
 
       &:after {
         animation-name: loader;
-        animation-duration: 4s;
-        animation-delay: 1.5s;
+        animation-duration: 2.5s;
+        animation-delay: 1.2s;
       }
     }
   }

@@ -36,15 +36,18 @@
           </tr>
         </thead>
         <tbody style="vertical-align: top;">
-          <tr class="section">
-            <td class="textAlignCenter">{{ documents.services.[0] }}</td>
-            <td>
-              <p class="textWeightBold">{{ documents.services.[1] }}</p>
-              <p class="colorTextGrey">{{ documents.services.[2] }}</p>
-            </td>
-            <td class="textAlignCenter">{{ documents.services.[3] }}</td>
-            <td class="textAlignCenter">{{ documents.services.[4] }}</td>
-          </tr>
+
+          {{ #each documents.services }}
+            <tr class="section">
+              <td class="textAlignCenter">{{ serviceQty }}</td>
+              <td>
+                <p class="textWeightBold">{{ serviceTitle }}</p>
+                <p class="colorTextGrey">{{ serviceSummary }}</p>
+              </td>
+              <td class="textAlignCenter">{{ serviceTime }}</td>
+              <td class="textAlignCenter">{{ servicePrice }}</td>
+            </tr>
+          {{ /each }}
         </tbody>
       </table>
     </form>

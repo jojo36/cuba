@@ -32,14 +32,18 @@ Template.backNewQuotation.events({
 
     var data = $('form').serializeArray();
     var dataInfos = data.slice(0, 2);
-    var dataServices = data.slice(2);
-    var serviceArray = [];
+    var servicesArray = [];
 
-    for (i = 0; i < dataServices.length; i++){
-
-      serviceArray.push(dataServices[i]['value']);
-
-    }
+    $('form tbody tr').each(function(i) {
+      var yo = {}
+      $(this).find('input').each(function(){
+        var name = $(this).attr('name');
+        var val = $(this).val();
+        yo[name] = val;
+      });
+      yo['serviceSummary'] = $(this).find('textarea').val();
+      servicesArray.push(yo);
+    });
 
     Documents.insert({
       projectId: project._id,
@@ -57,7 +61,7 @@ Template.backNewQuotation.events({
       },
       companyName: dataInfos[0]['value'],
       summary: dataInfos[1]['value'],
-      services: serviceArray,
+      services: servicesArray,
       createdAt: new Date()
     });
 
